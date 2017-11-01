@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Viktoriia Nosova](https://up.htmlacademy.ru/htmlcss/19/user/474591).
-* Наставник: `Олег Билик`.
+* Наставник: [Олег Билик](https://htmlacademy.ru/profile/id74397).
 
 ---
 
