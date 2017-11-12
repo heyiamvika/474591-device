@@ -14,14 +14,15 @@
 
         <!--logo-->
         <a class="header-logo">
-          <img src="img/logo.svg" alt="Логотип">
+          <img src="img/logo.svg" width="168" height="53" alt="Логотип магазина">
         </a>
 
         <ul class="header-user-nav">
           <li class="user-nav-search"><!--search--></li>
-          <li class="user-nav-signin">Войти</li>
-          <li class="user-nav-compare">Сравнить</li>
-          <li class="user-nav-shoppingbag">Корзина</li>
+          <!--Добавила ссылки-->
+          <li class="user-nav-signin"><a href="login.html">Войти</a></li>
+          <li class="user-nav-compare"><a href="#">Сравнить</a></li>
+          <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
         </ul>
 
         <ul class="header-site-nav">
@@ -48,13 +49,15 @@
     <main class="container">
 
       <section class="main-item">
+        <h1 class="visually-hidden">Популярные товары</h1>
 
         <!--slider1-->
 
         <section class="main-item-1">
+          <h2 class="visulally-hidden">Селфи-палка</h2>
 
           <div class="item-image">
-            <img src="img/slider-1.png" alt="Селфи-палка">
+            <img src="img/slider-1.png" width="384" height="486" alt="Селфи-палка">
           </div>
 
           <div class="item-about">
@@ -95,9 +98,10 @@
         <!--slider 2-->
 
         <section class="main-item-2">
+          <h2 class="visually-hidden">Фитнес-браслет</h2>
 
           <div class="item-image">
-            <img src="img/slider-2.png" alt="Фитнес-браслет">
+            <img src="img/slider-2.png" width="384" height="485" alt="Фитнес-браслет">
           </div>
 
           <div class="item-about">
@@ -133,9 +137,10 @@
         <!--slider 3-->
 
         <section class="main-item-3">
+          <h2 class="visually-hidden">Квадрокоптер</h2>
 
           <div class="item-image">
-            <img src="img/slider-3.png" alt="Квадрокоптер">
+            <img src="img/slider-3.png" width="384" height="485" alt="Квадрокоптер">
           </div>
 
           <div class="item-about">
@@ -172,11 +177,12 @@
       </section>
 
       <section class="main-catalog">
+        <h2 class="visually-hidden">Каталог продуктов</h2>
         <!--catalog-->
         <figure>
 
           <a href="#" class="catalog-item">
-          <img src="img/popular-1.svg" alt="Виртуальная реальность">
+          <img src="img/popular-1.svg" width="160" height="160" alt="Виртуальная реальность">
           </a>
 
           <figcaption>Виртуальная реальность</figcaption>
@@ -185,7 +191,7 @@
         <figure>
 
           <a href="#" class="catalog-item">
-          <img src="img/popular-2.svg" alt="Экшн-камеры">
+          <img src="img/popular-2.svg" width="160" height="160" alt="Экшн-камеры">
           </a>
 
           <figcaption>Моноподы для селфи</figcaption>
@@ -194,7 +200,7 @@
         <figure>
 
           <a href="#" class="catalog-item">
-          <img src="img/popular-3.svg" alt="Моноподы для селфи">
+          <img src="img/popular-3.svg" width="160" height="160" alt="Моноподы для селфи">
           </a>
 
           <figcaption>Экшн-камеры</figcaption>
@@ -203,7 +209,7 @@
         <figure>
 
           <a href="#" class="catalog-item">
-          <img src="img/popular-4.svg" alt="Фитнес-браслеты">
+          <img src="img/popular-4.svg" width="160" height="160" alt="Фитнес-браслеты">
           </a>
 
           <figcaption>Фитнес-браслеты</figcaption>
@@ -212,7 +218,7 @@
         <figure>
 
           <a href="#" class="catalog-item">
-          <img src="img/popular-5.svg" alt="Умные часы">
+          <img src="img/popular-5.svg" width="160" height="160" alt="Умные часы">
           </a>
 
           <figcaption>Умные часы</figcaption>
@@ -221,7 +227,7 @@
         <figure>
 
           <a href="#" class="catalog-item">
-          <img src="img/popular-6.svg" alt="Квадрокоптеры">
+          <img src="img/popular-6.svg" width="160" height="160" alt="Квадрокоптеры">
           </a>
 
           <figcaption>Квадрокоптеры</figcaption>
@@ -230,14 +236,15 @@
       </section>
 
       <section class="main-details">
+        <h2 class="visually-hidden">Детали покупки</h2>
 
         <!--delivery-->
         <div class="details-delivery">
 
           <ul>
-            <li>Доставка</li>
-            <li>Гарантия</li>
-            <li>Кредит</li>
+            <li class="details-delivery-current button-active"><a>Доставка</a></li>
+            <li class="button"><a href="#">Гарантия</a></li>
+            <li class="button"><a href="#">Кредит</a></li>
           </ul>
 
           <div class="details-description">
@@ -254,9 +261,9 @@
         <div class="delivery-warranty">
 
           <ul>
-            <li>Доставка</li>
-            <li>Гарантия</li>
-            <li>Кредит</li>
+            <li class="button"><a href="#">Доставка</a></li>
+            <li class="details-delivery-current button-active"><a>Гарантия</a></li>
+            <li class="button"><a href="#">Кредит</a></li>
           </ul>
 
           <div class="details-description">
@@ -272,9 +279,9 @@
         <div class="delivery-credit">
 
           <ul>
-            <li>Доставка</li>
-            <li>Гарантия</li>
-            <li>Кредит</li>
+            <li class="button"><a href="#">Доставка</a></li>
+            <li class="button"><a href="#">Гарантия</a></li>
+            <li class="details-delivery-current button-active"><a>Кредит</a></li>
           </ul>
 
           <div class="details-description">
@@ -289,12 +296,13 @@
       </section>
 
       <section class="main-logos">
+        <h2 class="visually-hidden">Наши партнеры</h2>
         <!--logos-->
         <ul>
-          <li><a href="#"><img src="img/logo-1.png" alt="Dji"></a></li>
-          <li><a href="#"><img src="img/logo-2.png" alt="SP Gadjets"></a></li>
-          <li><a href="#"><img src="img/logo-3.png" alt="Go Pro"></a></li>
-          <li><a href="#"><img src="img/logo-4.png" alt="Vive"></a></li>
+          <li><a href="#"><img src="img/logo-1.png"  width="260" height="100" alt="Dji"></a></li>
+          <li><a href="#"><img src="img/logo-2.png" width="260" height="100" alt="SP Gadjets"></a></li>
+          <li><a href="#"><img src="img/logo-3.png" width="260" height="100" alt="Go Pro"></a></li>
+          <li><a href="#"><img src="img/logo-4.png" width="260" height="100" alt="Vive"></a></li>
        </ul>
       </section>
 
@@ -315,7 +323,7 @@
             <li>ЖелДорЭкспедиция</li>
           </ul>
 
-          <a href="#">Подробнее о нас</a>
+          <a href="#" class="button">Подробнее о нас</a>
 
         </div>
 
@@ -324,8 +332,8 @@
           <h2>Контакты</h2>
           <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
           </p>
-          <img src="img/map.png" alt="Адрес магазина: улица Строителей, 15">
-          <a href="#">Напишите нам</a>
+          <img src="img/map.png" width="560" height="222" alt="Адрес магазина: улица Строителей, 15">
+          <a href="#" class="button">Напишите нам</a>
         </div>
 
       </section>
@@ -342,13 +350,13 @@
         <div class="row-1">
 
           <a class="footer-logo">
-            <img src="img/logo.svg" alt="Логотип">
+            <img src="img/logo.svg" width="166" height="53" alt="Логотип">
           </a>
 
           <ul class="footer-user-nav">
-            <li class="user-nav-signin">Войти</li>
-            <li class="user-nav-compare">Сравнить</li>
-            <li class="user-nav-shoppingbag">Корзина</li>
+            <li class="user-nav-signin"><a href="login.html">Войти</a></li>
+            <li class="user-nav-compare"><a href="#">Сравнить</a></li>
+            <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
           </ul>
 
         </div>
@@ -376,7 +384,7 @@
           </ul>
 
           <div class="logo-html">
-            <img src="img/logo-html.svg" alt="Логотип HTML Academy">
+            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy"></a>
           </div>
 
         </div>
@@ -385,23 +393,30 @@
 
     </footer>
 
-    <form class="module-form">
-      <label for="user-name">Ваше имя</label>
-      <input type="text" name="user-name" id="user-name" placeholder="Представтесь, пожалуйста" required>
+    <!--Module Form-->
 
-      <label for="user-email">Ваш e-mail</label>
-      <input type="text" name="user-email" id="user-email" placeholder="Для отправки ответа" required>
+    <form class="module-form" action="https://echo.htmlacademy.ru" method="post">
+      <fieldset>
+        <legend class="visually-hidden">Форма обратной связи</legend>
 
-      <label for="user-feedback">Текст письма</label>
-      <textarea id="user-feedback" rows="10">
-          В свободной форме
-      </textarea>
+        <label for="user-name">Ваше имя</label>
+        <input type="text" name="user-name" id="user-name" placeholder="Представтесь, пожалуйста" required>
+
+        <label for="user-email">Ваш e-mail</label>
+        <input type="text" name="user-email" id="user-email" placeholder="Для отправки ответа" required>
+
+        <label for="user-feedback">Текст письма</label>
+        <textarea id="user-feedback" rows="10">В свободной форме</textarea>
+     </fieldset>
 
       <button type="submit" class="button">Отправить</button>
+      <button type="button" class="button-close" aria-label="Закрыть форму"></button>
     </form>
 
+    <!--Module Form-->
     <div class="module-map">
-
+      <img src="img/map-big.jpg" width="960" height="559" alt="Адрес магазина: улица Строителей, 15">
+      <button type="button" class="button-close" aria-label="Закрыть карту"></button>
     </div>
 
   </body>
