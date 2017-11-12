@@ -14,15 +14,15 @@
       <nav class="header-nav">
         <!--logo-->
         <a href="index.html" class="header-logo">
-          <img src="img/logo.svg" alt="Логотип магазина">
+          <img src="img/logo.svg" width="168" height="53" alt="Логотип магазина">
         </a>
 
         <ul class="header-user-nav">
           <li class="user-nav-search"><!--search--></li>
-          <li class="user-nav-username"><a href="#">Валентин Петухов</a></li>
-          <li class="user-nav-signout">Выйти</li>
-          <li class="user-nav-compare">Сравнить</li>
-          <li class="user-nav-shoppingbag">Корзина</li>
+          <li class="user-nav-username"><a href="user-profile.html">Валентин Петухов</a></li>
+          <li class="user-nav-logout"><a href="#">Выйти</a></li>
+          <li class="user-nav-compare"><a href="#">Сравнить</a></li>
+          <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
         </ul>
 
         <ul class="header-site-nav">
@@ -57,22 +57,73 @@
       </ul>
 
       <section class="main-catalog">
+        <h2 class="visually-hidden">Каталог товаров</h2>
 
+        <!--Filter-->
         <div class="sidebar">
-          <!--Here comes filter-->
+          <h2>Фильтр:</h2>
+
+          <form class="sidebar-filter" action="https://echo.htmlacademy.ru" method="get">
+
+            <!--PROBLEM!!!-->
+            <fieldset>
+              <legend>Стоимость</legend>
+              <input type="range" name="filter-price" id="filter-price">
+              <label for="filter-price">От 0 до 5000</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Цвет</legend>
+
+              <input type="checkbox" name="filter-color-black" id="filter-color-black" checked>
+              <label for="filter-color-black">Черный</label>
+
+              <input type="checkbox" name="filter-color-white" id="filter-color-white">
+              <label for="filter-color-white">Белый</label>
+
+              <input type="checkbox" name="filter-color-blue" id="filter-color-blue" checked>
+              <label for="filter-color-blue">Синий</label>
+
+              <input type="checkbox" name="filter-color-red" id="filter-color-red" checked>
+              <label for="filter-color-red">Красный</label>
+
+              <input type="checkbox" name="filter-color-pink" id="filter-color-pink">
+              <label for="filter-color-pink">Розовый</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Bluetooth</legend>
+
+              <input type="radio" name="filter-bluetooth" id="filter-bluetooth-yes">
+              <label for="filter-bluetooth-yes">Есть</label>
+
+              <input type="radio" name="filter-bluetooth" id="filter-bluetooth-no">
+              <label for="filter-bluetooth-no">Нет</label>
+            </fieldset>
+
+            <button class="button" type="submit">Показать</button>
+
+          </form>
+
         </div>
 
         <div class="catalog">
 
           <div class="catalog-sort">
             <!--Как это правильно разметить??-->
+            <h2>Сортировка:</h2>
+            <ul>
+              <li class="sort-current">По цене</li>
+              <li>По типу</li>
+              <li>По популярности</li>
+            </ul>
           </div>
 
           <ul class="catalog-list">
 
             <li class="catalog-item-1">
               <div>
-                <img src="img/item-1.jpg" alt="Любительская селфи-палка">
+                <img src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
                   <a href="#">Добавить к сравнению</a>
@@ -86,7 +137,7 @@
 
             <li class="catalog-item-2">
               <div>
-                <img src="img/item-2.jpg" alt="Профессиональная селфи-палка">
+                <img src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
                   <a href="#">Добавить к сравнению</a>
@@ -100,7 +151,7 @@
 
             <li class="catalog-item-3">
               <div>
-                <img src="img/item-3.jpg" alt="Непотопляемая селфи-палка">
+                <img src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
                   <a href="#">Добавить к сравнению</a>
@@ -114,7 +165,7 @@
 
             <li class="catalog-item-4">
               <div>
-                <img src="img/item-4.jpg" alt="Селфи-палка «Следуй за мной»">
+                <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
                   <a href="#">Добавить к сравнению</a>
@@ -150,13 +201,13 @@
         <div class="row-1">
 
           <a class="footer-logo">
-            <img src="img/logo.svg" alt="Логотип">
+            <img src="img/logo.svg" width="166" height="53" alt="Логотип">
           </a>
 
           <ul class="footer-user-nav">
-            <li class="user-nav-signin">Войти</li>
-            <li class="user-nav-compare">Сравнить</li>
-            <li class="user-nav-shoppingbag">Корзина</li>
+            <li class="user-nav-login"><a href="login.html">Войти</a></li>
+            <li class="user-nav-compare"><a href="#">Сравнить</a></li>
+            <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
           </ul>
 
         </div>
@@ -184,7 +235,7 @@
           </ul>
 
           <div class="logo-html">
-            <img src="img/logo-html.svg" alt="Логотип HTML Academy">
+            <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-html.svg" width="27" height="35" alt="Логотип HTML Academy"></a>
           </div>
 
         </div>
