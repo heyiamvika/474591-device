@@ -68,8 +68,10 @@
             <!--PROBLEM!!!-->
             <fieldset>
               <legend>Стоимость</legend>
-              <input type="range" name="filter-price" id="filter-price">
-              <label for="filter-price">От 0 до 5000</label>
+              <input type="range" name="filter-price-from0" id="filter-price-from0">
+              <label for="filter-price-from0">От 0</label>
+              <input type="range" name="filter-price-till5000" id="filter-price-till5000">
+              <label for="filter-price-till5000">до 5000</label>
             </fieldset>
 
             <fieldset>
@@ -94,10 +96,10 @@
             <fieldset>
               <legend>Bluetooth</legend>
 
-              <input type="radio" name="filter-bluetooth" id="filter-bluetooth-yes">
+              <input type="radio" name="filter-bluetooth" value="bluetooth-yes" id="filter-bluetooth-yes">
               <label for="filter-bluetooth-yes">Есть</label>
 
-              <input type="radio" name="filter-bluetooth" id="filter-bluetooth-no">
+              <input type="radio" name="filter-bluetooth" value="bluetooth-no" id="filter-bluetooth-no">
               <label for="filter-bluetooth-no">Нет</label>
             </fieldset>
 
@@ -113,9 +115,14 @@
             <!--Как это правильно разметить??-->
             <h2>Сортировка:</h2>
             <ul>
-              <li class="sort-current">По цене</li>
-              <li>По типу</li>
-              <li>По популярности</li>
+              <li class="sort-current"><button type="button" name="sort-price">По цене</button></li>
+              <li><button type="button" name="sort-type">По типу</button></li>
+              <li><button type="button" name="sort-popular">По популярности</button></li>
+            </ul>
+            <ul>
+              <li class="sort-current"><a>По цене</a></li>
+              <li><a href="#">По типу</a></li>
+              <li><a href="#">По популярности</a></li>
             </ul>
           </div>
 
