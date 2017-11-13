@@ -68,10 +68,10 @@
             <!--PROBLEM!!!-->
             <fieldset>
               <legend>Стоимость</legend>
-              <input type="range" name="filter-price-from0" id="filter-price-from0">
-              <label for="filter-price-from0">От 0</label>
-              <input type="range" name="filter-price-till5000" id="filter-price-till5000">
-              <label for="filter-price-till5000">до 5000</label>
+              <input type="number" name="filter-price-0" id="filter-price-0">
+              <label for="filter-price-0">0</label>
+              <input type="number" name="filter-price-5000" id="filter-price-5000">
+              <label for="filter-price-5000">5000</label>
             </fieldset>
 
             <fieldset>
@@ -114,15 +114,15 @@
           <div class="catalog-sort">
             <!--Как это правильно разметить??-->
             <h2>Сортировка:</h2>
-            <ul>
-              <li class="sort-current"><button type="button" name="sort-price">По цене</button></li>
-              <li><button type="button" name="sort-type">По типу</button></li>
-              <li><button type="button" name="sort-popular">По популярности</button></li>
-            </ul>
-            <ul>
+            <ul class="sort-type">
               <li class="sort-current"><a>По цене</a></li>
               <li><a href="#">По типу</a></li>
               <li><a href="#">По популярности</a></li>
+            </ul>
+
+            <ul class="sort-buttons">
+              <button class="sort-button" type="button" name="sort-fromhightolow">От большего к меньшему</button>
+              <button class="sort-button sort-button-active" type="button" name="sort-fromlowtohigh">От меньшего к большему</button>
             </ul>
           </div>
 
