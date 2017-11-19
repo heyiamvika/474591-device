@@ -1,0 +1,402 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/girloyextrabold.woff") format("woff"),
+       url("fonts/girloyextrabold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/girloylight.woff") format("woff"),
+       url("fonts/girloylight.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/opensans.woff") format("woff"),
+       url("fonts/opensans.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/opensanslight.woff") format("woff"),
+       url("fonts/opensanslight.woff2") format("woff2");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-weight: lighter;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  color: #464646;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* General classes */
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* !For all buttons and links like buttons! */
+
+.button {
+  display: inline-block;
+  width: 220px;
+  height: 8px;
+
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  background-color: #f7e296;
+  /* background-size: 220px 8px;*/
+}
+
+.button:hover {
+  height: 40px;
+  /* background-size: 220px 8px;*/
+}
+
+.button:active {
+  height: 40px;
+
+  opacity: 0.3; /* Как сделать так, чтобы это касалось только текста??*/
+  /* background-size: 220px 8px;*/
+}
+
+.gilroy-heading {
+  font-weight: bold;
+  font-size: 47px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #000000;
+}
+
+.gilroy-link {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Header */
+
+.main-header {
+  background-color: #f7e296;
+}
+
+/* !For logo! */
+
+.header-logo:hover {
+  opacity: 0.6;
+}
+
+.header-logo:active {
+  opacity: 0.3;
+}
+
+/* !For navigation! */
+
+.header-user-nav {
+  line-height: 36px;
+}
+
+/* !For search! */
+
+.header-user-nav .user-nav-search {
+  opacity: 0.3;
+}
+
+.header-user-nav .user-nav-search:focus {
+  opacity: 1; /*Тут должна показываться кнопка, у которой тоже три состояния*/
+}
+
+.header-user-nav .user-nav-search:hover {
+  opacity: 0.6;
+}
+
+/* !For user links! */
+
+.header-user-nav a:hover {
+  opacity: 0.6;
+}
+
+.header-user-nav a:active {
+  opacity: 0.3;
+}
+
+/* !For site links! */
+
+.header-site-nav li:hover { /*Как прописать это только прямым потомкам?*/
+  opacity: 0.6;
+}
+
+.header-site-nav li:active {
+  opacity: 0.3;
+}
+
+/* !For hidden links! */
+
+.site-nav-catalog a:hover {
+  opacity: 0.6;
+}
+
+.site-nav-catalog a:active {
+  opacity: 0.3;
+}
+
+/* Main */
+
+/* !For item characteristics! */
+
+.item-characteristics th {
+  font-weight: normal;
+  font-size: 36px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #000000;
+}
+
+.item-characteristics td {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* !For catalog! */
+
+.main-catalog img {
+  background-color: #f7e296; /*Переопределять размеры самой картинки и оборачивать их в div??*/
+}
+
+.main-catalog figcaption {
+  font-weight: bold;
+  font-size: 18px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #000000;
+}
+
+/* !For additional features! */
+.main-details {
+  background-color: #e5e5e5;
+}
+
+.main-details .button {
+  height: 8px;
+  color: #000000;
+
+  background-color: #f7e296; /* Не получается выровнять по центру*/
+}
+
+.main-details .button:hover {
+  height: 40px;
+  color: #000000;
+  opacity: 1;
+  background-color: #f7e296;
+}
+
+.main-details .button:active {
+  width: 278px;
+  height: 40px;
+
+  color: #f7e296; /*Не получается поменять цвет текста*/
+  opacity: 1;
+  background-color: #000000;
+}
+
+/* !For partners! */
+
+.main-logos img {
+  opacity: 0.2;
+  filter: grayscale(100%);
+}
+
+.main-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* !About us! */
+
+.main-about ul {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #000000;
+
+  list-style: circle; /* !Тут нужно вставлять иконкой или можно задать opacity?! */
+}
+
+/* Footer */
+
+.main-footer {
+  color: #ffffff;
+
+  background-color: #464646;
+}
+
+/* !For footer logo! */
+
+.footer-logo img {
+  opacity: 1;
+}
+
+.footer-logo img:hover {
+  opacity: 0.6;
+}
+
+.footer-logo img:active {
+  opacity: 0.3;
+}
+
+/* !For user navigation! */
+
+.footer-user-nav a{
+  color: #ffffff;
+  line-height: 36px;
+  opacity: 0.7;
+}
+
+.footer-user-nav a:hover{
+  color: #ffffff;
+  line-height: 36px;
+  opacity: 1;
+}
+
+.footer-user-nav a:active{
+  color: #ffffff;
+  line-height: 36px;
+  opacity: 0.3;
+}
+
+/* !For site navigation! */
+
+.footer-site-nav a {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.footer-site-nav a:hover {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.footer-site-nav a:active {
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+/* !For social buttons! */
+
+.footer-social a {
+  color: #ffffff;
+  opacity: 0.3;
+}
+
+.footer-social a:hover {
+  color: #ffffff;
+  opacity: 0.6;
+}
+
+.footer-social a:active {
+  color: #ffffff;
+  opacity: 0.1;
+}
+
+/* !For HTML Academy logo! */
+
+.logo-html img{
+  opacity: 1;
+}
+
+.logo-html img:hover{
+  opacity: 0.6;
+}
+
+.logo-html img:active{
+  opacity: 0.3;
+}
+
+/* Registration Form */
+
+.module-form label {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #000000;
+}
+
+.module-form input[type="text"],
+.module-form textarea {
+  font-size: 14px;
+  line-height: 18px;
+  opacity: 0.4;
+
+  background-color: #aab2b5; /*У текста и фона разные opasity. Как быть?*/
+}
+
+.module-form input[type="text"]:focus,
+.module-form textarea:focus {
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  opacity: 1;
+
+  background-color: #ffffff;
+  outline-color: #f7e296;
+}
+
+.module-form input[type="text"]:hover,
+.module-form textarea:hover {
+  font-size: 14px;
+  line-height: 18px;
+  opacity: 0.4;
+
+  background-color: #aab2b5;
+}
+
+/*Как обозначить невалидное значение?*/
+
+/* Map */
+
+.module-map img {
+  box-shadow: 0px 20px 40px 0px;
+}

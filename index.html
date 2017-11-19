@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
+    <link rel="stylesheet" href="css/normalize.css" >
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
@@ -18,7 +20,7 @@
         </a>
 
         <ul class="header-user-nav">
-          <li class="user-nav-search"><!--search--></li>
+          <li class="user-nav-search"><!--search-->Поиск по сайту</li>
           <!--Добавила ссылки-->
           <li class="user-nav-login"><a href="login.html">Войти</a></li>
           <li class="user-nav-compare"><a href="#">Сравнить</a></li>
@@ -26,7 +28,7 @@
         </ul>
 
         <ul class="header-site-nav">
-          <li class="site-nav-catalog">Каталог товаров
+          <li class="site-nav-catalog gilroy-link">Каталог товаров
             <ul>
               <li><a href="#">Виртуальная реальность</a></li>
               <li><a href="#">Моноподы для селфи</a></li>
@@ -36,9 +38,9 @@
               <li><a href="#">Квадрокоптеры</a></li>
             </ul>
           </li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="#" class="gilroy-link">Доставка</a></li>
+          <li><a href="#" class="gilroy-link">Гарантия</a></li>
+          <li><a href="#" class="gilroy-link">Контакты</a></li>
         </ul>
 
       </nav>
@@ -54,7 +56,7 @@
         <!--slider1-->
 
         <section class="main-item-1">
-          <h2 class="visulally-hidden">Селфи-палка</h2>
+          <h2 class="visually-hidden">Селфи-палка</h2>
 
           <div class="item-image">
             <img src="img/slider-1.png" width="384" height="486" alt="Селфи-палка">
@@ -63,7 +65,7 @@
           <div class="item-about">
 
             <div class="item-description">
-              <p><b>Делай селфи, как Бен Стиллер!</b></p>
+              <p class="gilroy-heading"><b>Делай селфи, как Бен Стиллер!</b></p>
 
               <p>Самая длинная палка для селфи доступна в нашем магазине.
                 Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
@@ -107,14 +109,14 @@
           <div class="item-about">
 
             <div class="item-description">
-              <p><b>Худеем правильно!</b></p>
+              <p class="gilroy-heading"><b>Худеем правильно!</b></p>
 
               <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
 
             </div>
 
             <div class="item-details">
-              <a href="#">Подробнее</a>
+              <a href="#" class="button">Подробнее</a>
               <!--details-->
             </div>
 
@@ -146,13 +148,13 @@
           <div class="item-about">
 
             <div class="item-description">
-              <p><b>Порхает как бабочка, жалит как пчела!</b></p>
+              <p class="gilroy-heading"><b>Порхает как бабочка, жалит как пчела!</b></p>
 
               <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
             </div>
 
             <div class="item-details">
-              <a href="#">Подробнее</a>
+              <a href="#" class="button">Подробнее</a>
               <!--details-->
             </div>
 
@@ -242,14 +244,14 @@
         <div class="details-delivery">
 
           <ul>
-            <li class="details-delivery-current button-active"><a>Доставка</a></li>
+            <li class="delivery-current button"><a>Доставка</a></li>
             <li class="button"><a href="#">Гарантия</a></li>
             <li class="button"><a href="#">Кредит</a></li>
           </ul>
 
           <div class="details-description">
 
-            <h2>Доставка</h2>
+            <h2 class="gilroy-heading">Доставка</h2>
             <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
             </p>
 
@@ -262,13 +264,13 @@
 
           <ul>
             <li class="button"><a href="#">Доставка</a></li>
-            <li class="details-delivery-current button-active"><a>Гарантия</a></li>
+            <li class="delivery-current button"><a>Гарантия</a></li>
             <li class="button"><a href="#">Кредит</a></li>
           </ul>
 
           <div class="details-description">
 
-            <h2>Гарантия</h2>
+            <h2 class="gilroy-heading">Гарантия</h2>
             <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
 
           </div>
@@ -281,12 +283,12 @@
           <ul>
             <li class="button"><a href="#">Доставка</a></li>
             <li class="button"><a href="#">Гарантия</a></li>
-            <li class="details-delivery-current button-active"><a>Кредит</a></li>
+            <li class="delivery-current button"><a>Кредит</a></li>
           </ul>
 
           <div class="details-description">
 
-            <h2>Кредит</h2>
+            <h2 class="gilroy-heading">Кредит</h2>
             <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
 
           </div>
@@ -310,7 +312,7 @@
 
         <div class="main-about">
           <!--about-->
-          <h2>О нас</h2>
+          <h2 class="gilroy-heading">О нас</h2>
 
           <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.
           </p>
@@ -329,7 +331,7 @@
 
         <div class="main-contacts">
           <!--contacts-->
-          <h2>Контакты</h2>
+          <h2 class="gilroy-heading">Контакты</h2>
           <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.
           </p>
           <img src="img/map.png" width="560" height="222" alt="Адрес магазина: улица Строителей, 15">
@@ -350,7 +352,7 @@
         <div class="row-1">
 
           <a class="footer-logo">
-            <img src="img/logo.svg" width="166" height="53" alt="Логотип">
+            <img src="img/footer-logo.svg" width="166" height="53" alt="Логотип">
           </a>
 
           <ul class="footer-user-nav">
@@ -366,9 +368,9 @@
           <p>г. Москва, ул. Строителей, 15</p>
 
           <ul class="footer-site-nav">
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Гарантия</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#" class="gilroy-link">Доставка</a></li>
+            <li><a href="#" class="gilroy-link">Гарантия</a></li>
+            <li><a href="#" class="gilroy-link">Контакты</a></li>
           </ul>
 
           <p>Тел.: +7 (495) 495-95-95</p>
@@ -399,10 +401,10 @@
       <fieldset>
         <legend class="visually-hidden">Форма обратной связи</legend>
 
-        <label for="user-name">Ваше имя</label>
+        <label for="user-name">Ваше имя:</label>
         <input type="text" name="user-name" id="user-name" placeholder="Представтесь, пожалуйста" required>
 
-        <label for="user-email">Ваш e-mail</label>
+        <label for="user-email">Ваш e-mail:</label>
         <input type="text" name="user-email" id="user-email" placeholder="Для отправки ответа" required>
 
         <label for="user-feedback">Текст письма</label>
