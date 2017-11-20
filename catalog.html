@@ -10,7 +10,7 @@
   <body>
 
     <!--HEADER-->
-    <header class="catalog-header">
+    <header class="header">
 
       <!--navigation-->
       <nav class="header-nav">
@@ -20,7 +20,7 @@
         </a>
 
         <ul class="header-user-nav">
-          <li class="user-nav-search"><!--search--></li>
+          <li class="user-nav-search"><!--search--></li><!--input search, иконка, добавить кнопку за инпутом-->
           <li class="user-nav-username"><a href="user-profile.html">Валентин Петухов</a></li>
           <li class="user-nav-logout"><a href="#">Выйти</a></li>
           <li class="user-nav-compare"><a href="#">Сравнить</a></li>
@@ -28,7 +28,7 @@
         </ul>
 
         <ul class="header-site-nav">
-          <li class="site-nav-catalog">Каталог товаров
+          <li class="site-nav-catalog gilroy-link"><a>Каталог товаров</a>
             <ul>
               <li><a href="#">Виртуальная реальность</a></li>
               <li><a href="#">Моноподы для селфи</a></li>
@@ -38,9 +38,9 @@
               <li><a href="#">Квадрокоптеры</a></li>
             </ul>
           </li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="#" class="gilroy-link">Доставка</a></li>
+          <li><a href="#" class="gilroy-link">Гарантия</a></li>
+          <li><a href="#" class="gilroy-link">Контакты</a></li>
         </ul>
 
       </nav>
@@ -50,7 +50,7 @@
     <!--MAIN-->
     <main class="container">
 
-      <h1>Моноподы для селфи</h1>
+      <h1 class="gilroy-heading">Моноподы для селфи</h1>
 
       <ul class="breadcrums">
         <li><a href="index.html">Главная</a></li>
@@ -63,7 +63,8 @@
 
         <!--Filter-->
         <div class="sidebar">
-          <h2>Фильтр:</h2>
+
+            <h2 class="gilroy-link">Фильтр:</h2>
 
           <form class="sidebar-filter" action="https://echo.htmlacademy.ru" method="get">
 
@@ -115,7 +116,7 @@
 
           <div class="catalog-sort">
             <!--Как это правильно разметить??-->
-            <h2>Сортировка:</h2>
+            <h2 class="gilroy-link">Сортировка:</h2>
             <ul class="sort-type">
               <li class="sort-current"><a>По цене</a></li>
               <li><a href="#">По типу</a></li>
@@ -135,12 +136,12 @@
                 <img src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
-                  <a href="#">Добавить к сравнению</a>
+                  <a href="#" class="hover-compare">Добавить к сравнению</a>
                 </div>
               </div>
               <div>
                   <h3><a href="#">Любительская селфи-палка</a></h3>
-                  <p>500 руб.</p>
+                  <p class="catalog-price">500 руб.</p>
               </div>
             </li>
 
@@ -149,12 +150,12 @@
                 <img src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
-                  <a href="#">Добавить к сравнению</a>
+                  <a href="#" class="hover-compare">Добавить к сравнению</a>
                 </div>
               </div>
               <div>
                 <h3><a href="#">Профессиональная селфи-палка</a></h3>
-                <p>1500 руб.</p>
+                <p class="catalog-price">1500 руб.</p>
               </div>
             </li>
 
@@ -163,12 +164,12 @@
                 <img src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
-                  <a href="#">Добавить к сравнению</a>
+                  <a href="#" class="hover-compare">Добавить к сравнению</a>
                 </div>
               </div>
               <div>
                 <h3><a href="#">Непотопляемая селфи-палка</a></h3>
-                <p>2500 руб.</p>
+                <p class="catalog-price">2500 руб.</p>
               </div>
             </li>
 
@@ -177,12 +178,12 @@
                 <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
                 <div class="hover-link">
                   <a href="#" class="button">В корзину</a>
-                  <a href="#">Добавить к сравнению</a>
+                  <a href="#" class="hover-compare">Добавить к сравнению</a>
                 </div>
               </div>
               <div>
                 <h3><a href="#">Селфи-палка «Следуй за мной»</a></h3>
-                <p>4900 руб.</p>
+                <p class="catalog-price">4900 руб.</p>
               </div>
             </li>
           </ul>
@@ -190,18 +191,18 @@
         </div>
 
           <ul class="pagination-list">
-            <li class="pagination-item pagination-item-back"><a href="#">Назад</a></li>
+            <li class="pagination-item pagination-back gilroy-link"><a href="#">Назад</a></li>
             <li class="pagination-item pagination-item-current"><a href="#">1</a></li>
             <li class="pagination-item"><a href="#">2</a></li>
             <li class="pagination-item"><a href="#">3</a></li>
-            <li class="pagination-item pagination-item-forward"><a href="#">Вперед</a></li>
+            <li class="pagination-item pagination-forward gilroy-link"><a href="#">Вперед</a></li>
           </ul>
 
       </section>
     </main>
 
     <!--FOOTER-->
-    <footer class="main-footer">
+    <footer class="footer">
 
       <div class="footer-nav">
 
@@ -210,7 +211,7 @@
         <div class="row-1">
 
           <a class="footer-logo">
-            <img src="img/logo.svg" width="166" height="53" alt="Логотип">
+            <img src="img/footer-logo.svg" width="166" height="53" alt="Логотип">
           </a>
 
           <ul class="footer-user-nav">
@@ -226,9 +227,9 @@
           <p>г. Москва, ул. Строителей, 15</p>
 
           <ul class="footer-site-nav">
-            <li><a href="#">Доставка</a></li>
-            <li><a href="#">Гарантия</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#" class="gilroy-link">Доставка</a></li>
+            <li><a href="#" class="gilroy-link">Гарантия</a></li>
+            <li><a href="#" class="gilroy-link">Контакты</a></li>
           </ul>
 
           <p>Тел.: +7 (495) 495-95-95</p>
