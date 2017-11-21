@@ -1,32 +1,32 @@
 @font-face {
   font-family: "Gilroy";
-  src: url("fonts/girloyextrabold.woff") format("woff"),
-       url("fonts/girloyextrabold.woff2") format("woff2");
-  font-weight: bold;
+  src: url("../fonts/girloyextrabold.woff") format("woff"),
+       url("../fonts/girloyextrabold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("fonts/girloylight.woff") format("woff"),
-       url("fonts/girloylight.woff2") format("woff2");
+  src: url("../fonts/girloylight.woff") format("woff"),
+       url("../fonts/girloylight.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("fonts/opensans.woff") format("woff"),
-       url("fonts/opensans.woff2") format("woff2");
+  src: url("../fonts/opensans.woff") format("woff"),
+       url("../fonts/opensans.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("fonts/opensanslight.woff") format("woff"),
-       url("fonts/opensanslight.woff2") format("woff2");
-  font-weight: lighter;
+  src: url("../fonts/opensanslight.woff") format("woff"),
+       url("../fonts/opensanslight.woff2") format("woff2");
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -36,7 +36,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-weight: lighter;
+  font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   font-family: "Open Sans", "Arial", sans-serif;
@@ -48,11 +48,11 @@ a {
   color: #000000;
 }
 
-ul {
+/* General classes */
+
+.list {
   list-style-type: none;
 }
-
-/* General classes */
 
 .visually-hidden {
   position: absolute;
@@ -77,7 +77,7 @@ ul {
   width: 220px;
   height: 8px;
 
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   text-align: center;
@@ -104,14 +104,14 @@ ul {
 }
 
 .gilroy-heading {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 47px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
 }
 
 .gilroy-link {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
@@ -203,12 +203,17 @@ ul {
 
 /* !For catalog! */
 
+.main-catalog {
+  display: flex;
+  justify-content: space-around;
+}
+
 .main-catalog img {
   background-color: #f7e296; /*Переопределять размеры самой картинки и оборачивать их в div??*/
 }
 
 .main-catalog figcaption {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
@@ -244,6 +249,11 @@ ul {
 
 /* !For partners! */
 
+.partners-logos {
+  display: flex;
+  justify-content: space-around;
+}
+
 .main-logos img {
   opacity: 0.2;
   filter: grayscale(100%);
@@ -257,13 +267,13 @@ ul {
 /* !About us! */
 
 .main-about ul {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 40px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
 
-  list-style: circle; /* !Тут нужно вставлять иконкой или можно задать opacity?! */
+  list-style: circle; /* !Тут нужно вставлять иконкой или можно задать opacity?! SVG!*/
 }
 
 /* Footer */
@@ -297,14 +307,10 @@ ul {
 }
 
 .footer-user-nav a:hover{
-  color: #ffffff;
-  line-height: 36px;
   opacity: 1;
 }
 
 .footer-user-nav a:active{
-  color: #ffffff;
-  line-height: 36px;
   opacity: 0.3;
 }
 
@@ -359,7 +365,7 @@ ul {
 /* Registration Form */
 
 .module-form label {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
@@ -435,7 +441,7 @@ ul {
 }
 
 .sidebar legend {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
@@ -471,7 +477,7 @@ ul {
 /* !For catalog! */
 
 .catalog-list h3 {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
@@ -489,7 +495,7 @@ ul {
 }
 
 .pagination-item {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
