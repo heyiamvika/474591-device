@@ -1,15 +1,17 @@
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/girloyextrabold.woff") format("woff"),
-       url("../fonts/girloyextrabold.woff2") format("woff2");
+  src: url("../fonts/gilroyextrabold.woff") format("woff"),
+       url("../fonts/gilroyextrabold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
+
+
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/girloylight.woff") format("woff"),
-       url("../fonts/girloylight.woff2") format("woff2");
+  src: url("../fonts/gilroylight.woff") format("woff"),
+       url("../fonts/gilroylight.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -29,8 +31,6 @@
   font-weight: 300;
   font-style: normal;
 }
-
-
 
 body {
   margin: 0;
