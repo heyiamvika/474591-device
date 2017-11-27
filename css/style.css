@@ -32,6 +32,10 @@
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -48,13 +52,23 @@ a {
   color: #000000;
 }
 
+img {
+  max-height: 100%;
+  height: auto;
+}
+
 /* General classes */
 
 .list {
   list-style-type: none;
+
+  margin: 0;
+  padding: 0;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
   position: absolute;
 
   width: 1px;
@@ -70,12 +84,19 @@ a {
   overflow: hidden;
 }
 
+.container {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 /* !For all buttons and links like buttons! */
 
 .button { /* :before, positioning absolute, change height*/
+  position: relative;
+
   display: inline-block;
   width: 220px;
-  height: 8px;
+  height: 40px;
 
   font-weight: 700;
   font-size: 18px;
@@ -85,23 +106,38 @@ a {
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  background-color: #f7e296;
+  /*background-color: #f7e296;*/
 
   outline: 0;
   border: none;
 }
 
-.button:hover {
-  height: 40px;
-  /* background-size: 220px 8px;*/
+.button:before {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  width: 220px;
+  height: 8px;
+
+  background-color: #f7e296;
+
+  z-index: -1;
 }
 
-.button:active {
+.button:hover:before {
   height: 40px;
-
-  opacity: 0.3; /* Как сделать так, чтобы это касалось только текста??*/
-  /* background-size: 220px 8px;*/
+  top: 0px; /*Надпись не по центру*/
+  left: 0px;
 }
+
+.button:active:before {
+  height: 40px;
+  color: rgba(255, 0, 0, 0.3); /* Текст не становится прозрачным rgba*/
+}
+
+/*For fonts*/
 
 .gilroy-heading {
   font-weight: 700;
@@ -119,13 +155,32 @@ a {
   letter-spacing: 2px;
 }
 
-/* Header */
+/* HEADER */
 
 .header {
+  min-height: 300px; /*Не работает задание высоты*/
+}
+
+.header-nav {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /*Ничего не меняется при изменении justify-content*/
+  align-items: space-between;
+  margin-top: 40px;
+  padding: 50px 60px;
+
   background-color: #f7e296;
 }
 
 /* !For logo! */
+
+.header-logo {
+  position: absolute;
+  top: -19px;
+  left: 60px;
+}
 
 .header-logo:hover {
   opacity: 0.6;
@@ -138,25 +193,16 @@ a {
 /* !For navigation! */
 
 .header-user-nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1040px;
+  justify-content: space-between; /*Никакой разницы при задании justify-content*/
+  margin-bottom: 50px; /*В фотошопе - 50, Слишком большой margin выходит, почему? Где-то не обнулила?*/
+
   line-height: 36px;
 }
 
-/* !For search! */
-
-.header-user-nav .user-nav-search {
-  opacity: 0.3;
-}
-
-.header-user-nav .user-nav-search:focus {
-  opacity: 1; /*Тут должна показываться кнопка, у которой тоже три состояния*/
-}
-
-.header-user-nav .user-nav-search:hover {
-  opacity: 0.6;
-}
-
-/* !For user links! */
-
+/* !For user navigtion links! */
 .header-user-nav a:hover {
   opacity: 0.6;
 }
@@ -165,9 +211,138 @@ a {
   opacity: 0.3;
 }
 
-/* !For site links! */
+/* !For search! */
 
-.header-site-nav > li a:hover { /*Как прописать это только прямым потомкам? Дать li классы и все делать через классы*/
+.header-user-nav .user-nav-search { /*Тут должна показываться кнопка, у которой тоже три состояния*/
+  opacity: 0.3;
+}
+
+.header-user-nav .user-nav-search:focus {
+  opacity: 1;
+}
+
+.header-user-nav .user-nav-search:hover {
+  opacity: 0.6;
+}
+
+/* !For further user navigation */
+.header-user-nav .user-nav-login {
+  position: relative;
+
+  width: 70px;
+  margin-left: auto;
+  padding-left: 35px;
+  /*margin-right: 219px;*/
+}
+
+.header-user-nav .user-nav-login::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  width: 13px;
+  height: 12px;
+
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.header-user-nav .user-nav-compare {
+  position: relative;
+
+  width: 90px;
+  margin-left: auto;
+  padding-left: 20px;
+  /*margin-right: 40px; По макету - 40px, но в реальности выходит намного меньше*/
+}
+
+.header-user-nav .user-nav-compare::before {
+  content: "";
+
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  width: 10px;
+  height: 10px;
+
+  background-image: url("../img/compare.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.header-user-nav .user-nav-shoppingbag {
+  position: relative;
+
+  width: 85px;
+  margin-left: auto; /*Не могу выровнять края последних букв по одной линии*/
+  padding-left: 25px;
+}
+
+.header-user-nav .user-nav-shoppingbag::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  width: 12px;
+  height: 12px;
+
+  background-image: url("../img/cart.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+/* !For site navigation! */
+
+.header-site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1040px;
+  /*Никакой разницы при задании justify-content*/
+}
+
+/* !For site catalog! */
+
+.header-site-nav .site-nav-catalog {
+  position: relative;
+
+  width: 246px;
+  padding-right: 32px;
+}
+
+.header-site-nav .site-nav-catalog:after {
+  content: "";
+
+  position: absolute;
+  top: 6px;
+  right: 0px;
+  width: 16px;
+  height: 16px;
+
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  opacity: 0.3;
+}
+
+.header-site-nav .site-nav-catalog  ul {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  width: 550px;
+  height: 85px;
+  flex-wrap: wrap; /*Как сделать, чтобы колонки распределялись 3-2-1*/
+}
+
+.header-site-nav .site-nav-catalog li{
+  /*display: none;*/
+}
+
+.header-site-nav > li a:hover {
   opacity: 0.6;
 }
 
@@ -175,21 +350,95 @@ a {
   opacity: 0.3;
 }
 
-/* !For hidden links! */
-
-.site-nav-catalog a:hover {
+.header-site-nav .site-nav-catalog a:hover {
   opacity: 0.6;
 }
 
-.site-nav-catalog a:active {
+.header-site-nav .site-nav-catalog a:active {
   opacity: 0.3;
 }
 
-/* Main */
+/*.....*/
+
+.header-site-nav .site-nav-delivery{
+  margin-left: auto;
+  margin-right: 35px;
+}
+
+.header-site-nav .site-nav-warranty{
+  margin-left: auto;
+  margin-right: 109px;
+}
+
+.header-site-nav .site-nav-contacts{
+  margin-left: auto;
+}
+
+/* MAIN */
+
+/* For slider */
+
+.main-item-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: stretch; /*Не становится в один ряд картинка c описанием*/
+
+  width: 1040px;
+  padding: 0;
+  padding-left: 90px;
+}
+
+.item-image {
+  /*width: 400px;*/
+  margin-top: -100px;
+  margin-right: 125px;
+}
+
+.item-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  margin-top: -30px;
+  /*width: 480px;*/
+}
+
+.item-description .item-description-heading {
+  min-width: 400px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;  /*Рассчитала сама. От расстояния между буквами отнимаю сумму половинок высоты их строк*/
+
+  line-height: 56px; /*В фотошопе не указано, рассчитала сама. Расстояние между строками / 2 + font-size*/
+}
+
+.item-description .item-description-paragraph {
+  min-width: 480px;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 47px; /*65 (расстояние между буквами) - половинка высоты строки параграфа - высота самого блока)*/
+}
+
+.item-about .item-details {
+  margin-bottom: 60px; /*Приблизительно, потом буду подгонять*/
+}
+
+.item-about .item-characteristics {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  width: 430px;
+}
 
 /* !For item characteristics! */
 
 .item-characteristics th {
+  margin-right: 80px;
+
   font-weight: normal;
   font-size: 36px;
   font-family: "Gilroy", "Arial", sans-serif;
@@ -205,18 +454,34 @@ a {
 
 .main-catalog {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.main-catalog img {
-  background-color: #f7e296; /*Переопределять размеры самой картинки и оборачивать их в div??*/
-}
+.main-catalog-item {
+  width: 160px;
+  margin: 0;
+  margin-right: 40px;
 
-.main-catalog figcaption {
   font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
+}
+
+.main-catalog-item .catalog-item-image {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 38px;
+
+  background-color: #f7e296; /*Переопределять размеры самой картинки и оборачивать их в div??*/
+}
+
+.main-catalog-item .catalog-item-image img{
+  margin: 0 auto; /*Не работает для центрирования картинки. Через flex margin:auto? Тоже не работает*/
+}
+
+.main-catalog-item .catalog-item-description {
+  word-wrap: wrap; /*Тоже не работает*/
 }
 
 /* !For additional features! */
@@ -266,7 +531,17 @@ a {
 
 /* !About us! */
 
-.main-about ul {
+.main-company {
+  display: flex;
+  justify-content: space-between;/*Колонки не прилипают к границам блока. Почему?*/
+  width: 1040px;
+}
+
+.main-about {
+  width: 460px;
+}
+
+.main-about ul { /*Не работает через класс .main-about .about-partners*/
   font-weight: 700;
   font-size: 16px;
   line-height: 40px;
@@ -276,13 +551,34 @@ a {
   list-style: circle; /* !Тут нужно вставлять иконкой или можно задать opacity?! SVG!*/
 }
 
+.main-contacts {
+  width: 560px;
+}
+
 /* Footer */
 
 .footer {
   color: #ffffff;
-
   background-color: #464646;
+  min-height: 323px;
+
+  margin-top: auto;
 }
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /*Как обнулить все margin, чтобы была возможность задавать свои собственные, как на макете?*/
+  padding: 65px 0;
+}
+
+/*for row 1*/
+
+.footer-nav .row-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 /* !For footer logo! */
 
@@ -300,6 +596,79 @@ a {
 
 /* !For user navigation! */
 
+.footer-user-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-user-nav .user-nav-login {
+  position: relative;
+
+  width: 70px;
+  margin-left: auto;
+  margin-right: 40px;
+  padding-left: 35px;
+}
+
+.footer-user-nav .user-nav-login::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  width: 13px;
+  height: 12px;
+
+  background-image: url("../img/user.svg"); /*footer-user.svg не работает*/
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-user-nav .user-nav-compare {
+  position: relative;
+
+  width: 90px;
+  margin-left: auto;
+  margin-right: 40px;
+  padding-left: 20px;
+}
+
+.footer-user-nav .user-nav-compare::before {
+  content: "";
+
+  position: absolute;
+  top: 14px;
+  left: 0px;
+  width: 10px;
+  height: 10px;
+
+  background-image: url("../img/compare.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-user-nav .user-nav-shoppingbag {
+  position: relative;
+
+  width: 85px;
+  margin-left: auto;
+  padding-left: 25px;
+}
+
+.footer-user-nav .user-nav-shoppingbag::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  width: 12px;
+  height: 12px;
+
+  background-image: url("../img/cart.svg"); /*Как закрасить все иконки желтым?*/
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
 .footer-user-nav a{
   color: #ffffff;
   line-height: 36px;
@@ -314,7 +683,19 @@ a {
   opacity: 0.3;
 }
 
-/* !For site navigation! */
+/*for row 2*/
+
+.footer-nav .row-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer-site-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 436px;
+}
 
 .footer-site-nav a {
   color: #ffffff;
@@ -329,6 +710,19 @@ a {
 .footer-site-nav a:active {
   color: #ffffff;
   opacity: 0.3;
+}
+
+/*For row 3*/
+
+.footer-nav .row-3 {
+  display: flex;
+  justify-content: center; /*Потом будет space-between, когда добавится черточка*/
+}
+
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  width: 141px;
 }
 
 /* !For social buttons! */

@@ -9,7 +9,7 @@
   <body>
 
     <!--HEADER-->
-    <header class="header">
+    <header class="header container">
 
       <!--navigation-->
       <nav class="header-nav">
@@ -19,16 +19,16 @@
           <img src="img/logo.svg" width="168" height="53" alt="Логотип магазина">
         </a>
 
+        <!-- user-navigation -->
         <ul class="header-user-nav list">
           <li class="user-nav-search"><!--search-->Поиск по сайту</li>
-          <!--Добавила ссылки-->
           <li class="user-nav-login"><a href="login.html">Войти</a></li>
           <li class="user-nav-compare"><a href="#">Сравнить</a></li>
           <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
         </ul>
 
         <ul class="header-site-nav list">
-          <li class="site-nav-catalog gilroy-link"><a href="catalog.html">Каталог товаров</a>
+          <li class="site-nav-catalog"><a href="catalog.html" class="gilroy-link">Каталог товаров</a><!--Проставила класс, но все равно распространяется на дочерние елементы -->
             <ul class="list">
               <li><a href="#">Виртуальная реальность</a></li>
               <li><a href="#">Моноподы для селфи</a></li>
@@ -38,9 +38,9 @@
               <li><a href="#">Квадрокоптеры</a></li>
             </ul>
           </li>
-          <li><a href="#" class="gilroy-link">Доставка</a></li>
-          <li><a href="#" class="gilroy-link">Гарантия</a></li>
-          <li><a href="#" class="gilroy-link">Контакты</a></li>
+          <li class="site-nav-delivery"><a href="#" class="gilroy-link">Доставка</a></li>
+          <li class="site-nav-warranty"><a href="#" class="gilroy-link">Гарантия</a></li>
+          <li class="site-nav-contacts"><a href="#" class="gilroy-link">Контакты</a></li>
         </ul>
 
       </nav>
@@ -55,7 +55,7 @@
 
         <!--slider1-->
 
-        <section class="main-item-1">
+        <section class="main-item-flex main-item-1">
           <h2 class="visually-hidden">Селфи-палка</h2>
 
           <div class="item-image">
@@ -65,9 +65,9 @@
           <div class="item-about">
 
             <div class="item-description">
-              <p class="gilroy-heading"><b>Делай селфи, как Бен Стиллер!</b></p>
+              <p class="gilroy-heading item-description-heading"><b>Делай селфи, как Бен Стиллер!</b></p>
 
-              <p>Самая длинная палка для селфи доступна в нашем магазине.
+              <p class="item-description-paragraph">Самая длинная палка для селфи доступна в нашем магазине.
                 Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
 
             </div>
@@ -99,7 +99,7 @@
 
         <!--slider 2-->
 
-        <section class="main-item-2">
+        <section class="main-item-flex main-item-2">
           <h2 class="visually-hidden">Фитнес-браслет</h2>
 
           <div class="item-image">
@@ -109,9 +109,9 @@
           <div class="item-about">
 
             <div class="item-description">
-              <p class="gilroy-heading"><b>Худеем правильно!</b></p>
+              <p class="gilroy-heading item-description-heading"><b>Худеем правильно!</b></p>
 
-              <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+              <p class="item-description-paragraph">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
 
             </div>
 
@@ -138,7 +138,7 @@
 
         <!--slider 3-->
 
-        <section class="main-item-3">
+        <section class="main-item-flex main-item-3">
           <h2 class="visually-hidden">Квадрокоптер</h2>
 
           <div class="item-image">
@@ -148,9 +148,9 @@
           <div class="item-about">
 
             <div class="item-description">
-              <p class="gilroy-heading"><b>Порхает как бабочка, жалит как пчела!</b></p>
+              <p class="gilroy-heading item-description-heading"><b>Порхает как бабочка, жалит как пчела!</b></p>
 
-              <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+              <p class="item-description-paragraph">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
             </div>
 
             <div class="item-details">
@@ -182,58 +182,70 @@
 
         <h2 class="visually-hidden">Каталог продуктов</h2>
         <!--catalog-->
-        <figure>
+        <figure class="main-catalog-item">
 
-          <a href="catalog.html/vr" class="catalog-item">
-          <img src="img/popular-1.svg" width="160" height="160" alt="Виртуальная реальность">
-          </a>
+          <div class="catalog-item-image">
+            <a href="catalog.html/vr" class="catalog-item">
+            <img src="img/popular-1.svg" width="97" height="55" alt="Виртуальная реальность">
+            </a>
+          </div>
 
-          <figcaption>Виртуальная реальность</figcaption>
+          <figcaption class="catalog-item-description">Виртуальная реальность</figcaption>
         </figure>
 
-        <figure>
+        <figure class="main-catalog-item">
 
-          <a href="catalog.html/monopods" class="catalog-item">
-          <img src="img/popular-2.svg" width="160" height="160" alt="Экшн-камеры">
-          </a>
+          <div class="catalog-item-image">
+            <a href="catalog.html/monopods" class="catalog-item">
+            <img src="img/popular-2.svg" width="86" height="117" alt="Экшн-камеры">
+            </a>
+          </div>
 
-          <figcaption>Моноподы для селфи</figcaption>
+          <figcaption class="catalog-item-description">Моноподы для селфи</figcaption>
         </figure>
 
-        <figure>
+        <figure class="main-catalog-item">
 
-          <a href="catalog.html/cameras" class="catalog-item">
-          <img src="img/popular-3.svg" width="160" height="160" alt="Моноподы для селфи">
-          </a>
+          <div class="catalog-item-image">
+            <a href="catalog.html/cameras" class="catalog-item">
+            <img src="img/popular-3.svg" width="71" height="87" alt="Моноподы для селфи">
+            </a>
+          </div>
 
-          <figcaption>Экшн-камеры</figcaption>
+          <figcaption class="catalog-item-description">Экшн-камеры</figcaption>
         </figure>
 
-        <figure>
+        <figure class="main-catalog-item">
 
-          <a href="catalog.html/fitness-trackers" class="catalog-item">
-          <img src="img/popular-4.svg" width="160" height="160" alt="Фитнес-браслеты">
-          </a>
+          <div class="catalog-item-image">
+            <a href="catalog.html/fitness-trackers" class="catalog-item">
+            <img src="img/popular-4.svg" width="107" height="65" alt="Фитнес-браслеты">
+            </a>
+          </div>
 
-          <figcaption>Фитнес-браслеты</figcaption>
+          <figcaption class="catalog-item-description">Фитнес-браслеты</figcaption>
         </figure>
 
-        <figure>
+        <figure class="main-catalog-item">
 
-          <a href="catalog.html/smartwatch" class="catalog-item">
-          <img src="img/popular-5.svg" width="160" height="160" alt="Умные часы">
-          </a>
+          <div class="catalog-item-image">
+            <a href="catalog.html/smartwatch" class="catalog-item">
+            <img src="img/popular-5.svg" width="56" height="98" alt="Умные часы">
+            </a>
+          </div>
 
-          <figcaption>Умные часы</figcaption>
+          <figcaption class="catalog-item-description">Умные часы</figcaption>
         </figure>
 
-        <figure>
+        <figure class="main-catalog-item">
 
-          <a href="catalog.html/quadrocopters" class="catalog-item">
-          <img src="img/popular-6.svg" width="160" height="160" alt="Квадрокоптеры">
-          </a>
+          <div class="catalog-item-image">
+            <a href="catalog.html/quadrocopters" class="catalog-item">
+            <img src="img/popular-6.svg" width="132" height="69" alt="Квадрокоптеры">
+            </a>
+          </div>
 
-          <figcaption>Квадрокоптеры</figcaption>
+          <figcaption class="catalog-item-description">Квадрокоптеры</figcaption>
         </figure>
 
       </section>
@@ -320,7 +332,7 @@
           <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:
           </p>
 
-          <ul class="list">
+          <ul class="about-partners list">
             <li>Деловые Линии</li>
             <li>Автотрейдинг</li>
             <li>ЖелДорЭкспедиция</li>
@@ -346,9 +358,7 @@
     <!--FOOTER-->
     <footer class="footer">
 
-      <div class="footer-nav">
-
-        <!--logo-->
+      <div class="footer-nav container">
 
         <div class="row-1">
 
@@ -369,9 +379,9 @@
           <p>г. Москва, ул. Строителей, 15</p>
 
           <ul class="footer-site-nav list">
-            <li><a href="#" class="gilroy-link">Доставка</a></li>
-            <li><a href="#" class="gilroy-link">Гарантия</a></li>
-            <li><a href="#" class="gilroy-link">Контакты</a></li>
+            <li class="footer-site-nav-delivery"><a href="#" class="gilroy-link">Доставка</a></li>
+            <li class="footer-site-nav-warranty"><a href="#" class="gilroy-link">Гарантия</a></li>
+            <li class="footer-site-nav-contacts"><a href="#" class="gilroy-link">Контакты</a></li>
           </ul>
 
           <p>Тел.: +7 (495) 495-95-95</p>
