@@ -37,6 +37,8 @@
 }
 
 body {
+  min-width: 1480px;
+
   margin: 0;
   padding: 0;
 
@@ -58,13 +60,14 @@ img {
 }
 
 /* General classes */
-
+/*Убрать вот это и прописать каждому листу отдельно!*/
 .list {
   list-style-type: none;
 
   margin: 0;
   padding: 0;
 }
+/*В вебинаре по сеткам говорили, что margin: 0; padding: 0; лучше задавать каждому отдельному ul. Как лучше сделать? Сказали, что ни в коем случае так нельзя задавать*/
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -91,12 +94,12 @@ input[type="radio"].visually-hidden {
 
 /* !For all buttons and links like buttons! */
 
-.button { /* :before, positioning absolute, change height*/
+.button {
   position: relative;
 
   display: inline-block;
   width: 220px;
-  height: 40px;
+  padding: 10px 0;
 
   font-weight: 700;
   font-size: 18px;
@@ -106,8 +109,6 @@ input[type="radio"].visually-hidden {
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  /*background-color: #f7e296;*/
-
   outline: 0;
   border: none;
 }
@@ -116,7 +117,7 @@ input[type="radio"].visually-hidden {
   content: "";
 
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 0px;
   width: 220px;
   height: 8px;
@@ -128,13 +129,13 @@ input[type="radio"].visually-hidden {
 
 .button:hover:before {
   height: 40px;
-  top: 0px; /*Надпись не по центру*/
+  top: 5px;
   left: 0px;
 }
 
-.button:active:before {
+.button:active {
   height: 40px;
-  color: rgba(255, 0, 0, 0.3); /* Текст не становится прозрачным rgba*/
+  color: rgba(0, 0, 0, 0.3);
 }
 
 /*For fonts*/
@@ -158,7 +159,8 @@ input[type="radio"].visually-hidden {
 /* HEADER */
 
 .header {
-  min-height: 300px; /*Не работает задание высоты*/
+  min-height: 300px;
+  padding-top: 40px;
 }
 
 .header-nav {
@@ -168,7 +170,6 @@ input[type="radio"].visually-hidden {
   flex-direction: column;
   justify-content: space-between; /*Ничего не меняется при изменении justify-content*/
   align-items: space-between;
-  margin-top: 40px;
   padding: 50px 60px;
 
   background-color: #f7e296;
@@ -192,11 +193,50 @@ input[type="radio"].visually-hidden {
 
 /* !For navigation! */
 
+/* !For search! */
+
+.header-nav .user-nav-search { /*Тут должна показываться кнопка, у которой тоже три состояния*/
+  position: relative;
+  flex-grow: 1;
+
+  padding-left: 40px;
+
+  opacity: 0.3;
+  /*Как убрать этот outline? */
+}
+
+.header-nav .user-nav-search:before {
+  content: "";
+
+  position: absolute;
+  top: 7px;
+  left: 0px;
+  width: 16px;
+  height: 16px;
+
+  background-image: url("../img/search.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  /*Может, лучше обернуть в div? Не могу задать отдельный opacity*/
+}
+
+.header-nav .user-nav-search:focus {
+  opacity: 1;
+}
+
+.header-nav .user-nav-search:hover {
+  opacity: 0.6;
+}
+
+/* !For further user navigation */
+
 .header-user-nav {
   display: flex;
   flex-wrap: wrap;
-  width: 1040px;
-  justify-content: space-between; /*Никакой разницы при задании justify-content*/
+  width: 485px; /*В макете - 500px, почему?*/
+  margin-left: auto;
+  justify-content: flex-start;
   margin-bottom: 50px; /*В фотошопе - 50, Слишком большой margin выходит, почему? Где-то не обнулила?*/
 
   line-height: 36px;
@@ -211,28 +251,11 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-/* !For search! */
-
-.header-user-nav .user-nav-search { /*Тут должна показываться кнопка, у которой тоже три состояния*/
-  opacity: 0.3;
-}
-
-.header-user-nav .user-nav-search:focus {
-  opacity: 1;
-}
-
-.header-user-nav .user-nav-search:hover {
-  opacity: 0.6;
-}
-
-/* !For further user navigation */
 .header-user-nav .user-nav-login {
   position: relative;
-
+  flex-grow: 1;
   width: 70px;
-  margin-left: auto;
   padding-left: 35px;
-  /*margin-right: 219px;*/
 }
 
 .header-user-nav .user-nav-login::before {
@@ -255,7 +278,7 @@ input[type="radio"].visually-hidden {
   width: 90px;
   margin-left: auto;
   padding-left: 20px;
-  /*margin-right: 40px; По макету - 40px, но в реальности выходит намного меньше*/
+  margin-right: 40px;
 }
 
 .header-user-nav .user-nav-compare::before {
@@ -276,7 +299,7 @@ input[type="radio"].visually-hidden {
   position: relative;
 
   width: 85px;
-  margin-left: auto; /*Не могу выровнять края последних букв по одной линии*/
+  margin-left: auto;
   padding-left: 25px;
 }
 
@@ -306,18 +329,20 @@ input[type="radio"].visually-hidden {
 
 /* !For site catalog! */
 
-.header-site-nav .site-nav-catalog {
+.header-site-nav .site-nav-catalog span {
   position: relative;
+
+  flex-grow: 1;
 
   width: 246px;
   padding-right: 32px;
 }
 
-.header-site-nav .site-nav-catalog:after {
+.header-site-nav .site-nav-catalog span:after {
   content: "";
 
   position: absolute;
-  top: 6px;
+  top: 2px;
   right: 0px;
   width: 16px;
   height: 16px;
@@ -329,17 +354,24 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.header-site-nav .site-nav-catalog  ul {
+.header-site-nav .site-nav-catalog  .site-nav-hidden-menu {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  align-content: flex-start;
   width: 550px;
   height: 85px;
-  flex-wrap: wrap; /*Как сделать, чтобы колонки распределялись 3-2-1*/
+  flex-wrap: wrap;
+
+  margin-top: 40px;
 }
 
-.header-site-nav .site-nav-catalog li{
-  /*display: none;*/
+.header-site-nav .site-nav-catalog:hover .site-nav-hidden-menu li {
+  display: block;
+}
+
+.header-site-nav .site-nav-catalog .site-nav-hidden-menu li{
+  display: none;
+  margin-right: 40px;
 }
 
 .header-site-nav > li a:hover {
@@ -377,13 +409,39 @@ input[type="radio"].visually-hidden {
 /* MAIN */
 
 /* For slider */
+.main-item {
+  position: relative;
+
+  margin-bottom: 95px;
+}
+
+.main-item-1 {
+  /*position: absolute;
+  top: 0;
+  left: 0;*/
+  /*z-index: -1;*/
+}
+
+.main-item-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*z-index: -2;*/
+}
+
+.main-item-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*z-index: -3;*/
+}
 
 .main-item-flex {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-content: stretch;
-  align-items: stretch; /*Не становится в один ряд картинка c описанием*/
+  align-items: stretch;
 
   width: 1040px;
   padding: 0;
@@ -406,12 +464,16 @@ input[type="radio"].visually-hidden {
 }
 
 .item-description .item-description-heading {
-  min-width: 400px;
+  min-width: 260px;
   padding: 0;
   margin: 0;
   margin-bottom: 28px;  /*Рассчитала сама. От расстояния между буквами отнимаю сумму половинок высоты их строк*/
 
   line-height: 56px; /*В фотошопе не указано, рассчитала сама. Расстояние между строками / 2 + font-size*/
+}
+
+.main-item-2 .item-description-heading{
+  max-width: 260px;
 }
 
 .item-description .item-description-paragraph {
@@ -426,18 +488,26 @@ input[type="radio"].visually-hidden {
   margin-bottom: 60px; /*Приблизительно, потом буду подгонять*/
 }
 
-.item-about .item-characteristics {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  width: 430px;
-}
-
 /* !For item characteristics! */
 
+.item-about .item-characteristics {
+  display: table;
+  width: 500px;
+
+  /*Как сместить все влево и задать свой padding?*/
+}
+
+.item-characteristics tr {
+  /*display: table-row;*/
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
 .item-characteristics th {
-  margin-right: 80px;
+  /*display: table-cell;*/
+  margin: 0;
+  padding: 0;
 
   font-weight: normal;
   font-size: 36px;
@@ -446,15 +516,20 @@ input[type="radio"].visually-hidden {
 }
 
 .item-characteristics td {
+  /*display: table-cell;*/
+  margin: 0;
+  padding: 0;
+
   font-size: 13px;
   line-height: 20px;
 }
-
 /* !For catalog! */
 
 .main-catalog {
   display: flex;
   justify-content: space-between;
+
+  margin-bottom: 80px;
 }
 
 .main-catalog-item {
@@ -469,50 +544,154 @@ input[type="radio"].visually-hidden {
 }
 
 .main-catalog-item .catalog-item-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 160px;
   height: 160px;
   margin-bottom: 38px;
 
-  background-color: #f7e296; /*Переопределять размеры самой картинки и оборачивать их в div??*/
+  background-color: #f7e296;
 }
 
-.main-catalog-item .catalog-item-image img{
-  margin: 0 auto; /*Не работает для центрирования картинки. Через flex margin:auto? Тоже не работает*/
+/*.main-catalog-item .catalog-item-image:hover {
+  background-color: #f0c52e;
+  background-size: 160px 160px;
 }
+
+.main-catalog-item .catalog-item-image img:active {
+  background-color: #f0c52e;
+
+  opacity: 0.3;
+}
+
+.main-catalog-item .catalog-item-image .catalog-item-description:active {
+  opacity: 0.3;
+}*/
+/*
+Как это правильно сделать?*/
 
 .main-catalog-item .catalog-item-description {
-  word-wrap: wrap; /*Тоже не работает*/
+  word-wrap: wrap;
 }
 
 /* !For additional features! */
 .main-details {
+  margin-bottom: 200px;
+}
+
+.details-delivery {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-delivery-background {
+  position: absolute;
+  top: 55px;
+  left: -160px;
+
+  z-index: -1;
+
+  min-width: 1480px;
+  min-height: 288px;
+
   background-color: #e5e5e5;
 }
 
-.main-details .button {
-  height: 8px;
-  color: #000000;
+/*Через before не получается, удалить этот кусок*/
 
-  background-color: #f7e296; /* Не получается выровнять по центру*/
+/*.details-delivery:before {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  min-width: 1480px;
+  min-height: 288px;
+
+  background-color: #e5e5e5;
+}*/
+
+.details-delivery .delivery-sidebar {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+  width: 286px;
 }
 
-.main-details .button:hover {
-  height: 40px;
-  color: #000000;
-  opacity: 1;
-  background-color: #f7e296;
-}
+.details-delivery .delivery-sidebar:before {
+  content: "";
+  position: absolute;
+  display: block;
 
-.main-details .button:active {
-  width: 278px;
-  height: 40px;
-
-  color: #f7e296; /*Не получается поменять цвет текста*/
-  opacity: 1;
+  width: 7px;
+  height: 319px;
+  top: -80px;
+  left: 280px;
   background-color: #000000;
 }
 
+.details-delivery .delivery-sidebar .sidebar-current {
+    width: 280px;
+    height: 40px;
+    padding: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    text-align: left;
+
+    color: #f7e184;
+    background-color: #000000;
+}
+
+.description-slide {
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description-2 {
+  display: none;
+}
+
+.description-3 {
+  display: none;
+}
+
+.description-slide .description-paragraph {
+  width: 460px;
+}
+
+.description-slide .image-1 {
+  width: 136px;
+  height: 164px;
+  background-image: url("../img/delivery.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.description-slide .image-2 {
+  width: 171px;
+  height: 195px;
+  background-image: url("../img/warranty.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.description-slide .image-3 {
+  width: 156px;
+  height: 188px;
+  background-image: url("../img/credit.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
 /* !For partners! */
+
+.main-logos {
+  margin-bottom: 80px;
+}
 
 .partners-logos {
   display: flex;
@@ -533,26 +712,83 @@ input[type="radio"].visually-hidden {
 
 .main-company {
   display: flex;
-  justify-content: space-between;/*Колонки не прилипают к границам блока. Почему?*/
+  justify-content: flex-start;/*Колонки не прилипали к границам блока, когда использовала space-between. Почему?*/
+  align-items: flex-start;
   width: 1040px;
+
+  margin-bottom: 90px;
 }
 
+.main-company .black-stripe {
+  width: 80px;
+  height: 7px;
+  margin-bottom: 50px;
+
+  background-color: #000000;
+}
+
+.main-company h2 {
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+.main-company p {
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+.main-company .company-paragraph {
+  margin-bottom: 40px;
+}
+
+/* About us */
+
 .main-about {
-  width: 460px;
+  min-width: 480px;
+
+  margin-right: 140px;
 }
 
 .main-about ul { /*Не работает через класс .main-about .about-partners*/
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 40px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
 
-  list-style: circle; /* !Тут нужно вставлять иконкой или можно задать opacity?! SVG!*/
+  list-style-type: none; /* !Тут нужно вставлять иконкой или можно задать opacity?! SVG!*/
 }
 
+.main-about li {
+  position: relative;
+
+  padding-left: 35px;
+}
+
+/*Как вот тут вставить и перекрасить?*/
+/*.main-about li:before {
+  content: "";
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("../img/slider-button-empty.svg");
+  background-repeat: no-repeat;
+}*/
+
+/* Contacts */
 .main-contacts {
-  width: 560px;
+  /*width: 560px;*/
+}
+
+.main-contacts img {
+  margin-bottom: 50px;
 }
 
 /* Footer */
@@ -568,7 +804,7 @@ input[type="radio"].visually-hidden {
 .footer-nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /*Как обнулить все margin, чтобы была возможность задавать свои собственные, как на макете?*/
+  justify-content: center;/*Как обнулить все margin, чтобы была возможность задавать свои собственные, как на макете?*/
   padding: 65px 0;
 }
 
@@ -578,7 +814,6 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
 }
-
 
 /* !For footer logo! */
 
@@ -601,16 +836,21 @@ input[type="radio"].visually-hidden {
   justify-content: flex-end;
 }
 
-.footer-user-nav .user-nav-login {
-  position: relative;
+.footer-user-nav .footer-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 
-  width: 70px;
-  margin-left: auto;
-  margin-right: 40px;
-  padding-left: 35px;
+  /*Не задавала ширину, потому что если вставить другой текст, то фиксированная ширина - это же не очень хорошо?*/
 }
 
-.footer-user-nav .user-nav-login::before {
+.footer-user-nav .user-nav-login {
+  min-width: 70px;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+/*.footer-user-nav .user-nav-login::before {
   content: "";
 
   position: absolute;
@@ -619,21 +859,18 @@ input[type="radio"].visually-hidden {
   width: 13px;
   height: 12px;
 
-  background-image: url("../img/user.svg"); /*footer-user.svg не работает*/
+  background-image: url("../img/user.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-}
+  }*/
 
 .footer-user-nav .user-nav-compare {
-  position: relative;
-
-  width: 90px;
+  min-width: 90px;
   margin-left: auto;
   margin-right: 40px;
-  padding-left: 20px;
 }
 
-.footer-user-nav .user-nav-compare::before {
+/*.footer-user-nav .user-nav-compare::before {
   content: "";
 
   position: absolute;
@@ -645,17 +882,14 @@ input[type="radio"].visually-hidden {
   background-image: url("../img/compare.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-}
+}*/
 
 .footer-user-nav .user-nav-shoppingbag {
-  position: relative;
-
-  width: 85px;
+  min-width: 85px;
   margin-left: auto;
-  padding-left: 25px;
 }
 
-.footer-user-nav .user-nav-shoppingbag::before {
+/*.footer-user-nav .user-nav-shoppingbag::before {
   content: "";
 
   position: absolute;
@@ -664,10 +898,10 @@ input[type="radio"].visually-hidden {
   width: 12px;
   height: 12px;
 
-  background-image: url("../img/cart.svg"); /*Как закрасить все иконки желтым?*/
+  background-image: url("../img/cart.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-}
+}*/
 
 .footer-user-nav a{
   color: #ffffff;
@@ -689,6 +923,8 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-bottom: 30px;
+  /*Приблизительно сейчас, потом изменить*/
 }
 
 .footer-site-nav {
@@ -716,12 +952,20 @@ input[type="radio"].visually-hidden {
 
 .footer-nav .row-3 {
   display: flex;
-  justify-content: center; /*Потом будет space-between, когда добавится черточка*/
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav .row-3 .yellow-stripe {
+  width: 80px;
+  height: 7px;
+  background-color: #ffc600;
 }
 
 .footer-social {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 141px;
 }
 
