@@ -37,7 +37,8 @@
 }
 
 body {
-  min-width: 1480px;
+  min-width: 1440px;
+  /*В catalog.html сама ширина страницы меньше - 1440px, в index.html - 1480px;*/
 
   margin: 0;
   padding: 0;
@@ -1049,12 +1050,83 @@ input[type="radio"].visually-hidden {
 
 /* CATALOG. CSS */
 
+/*HEADER*/
+
+.catalog-header {
+  margin-bottom: 40px;
+}
+
+.header-user-nav .user-nav-username {
+  flex-grow: 1;
+  position: relative;
+  margin-right: 20px;
+  padding-left: 28px;
+}
+
+.header-user-nav .user-nav-username::before {
+  content: "";
+
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  width: 13px;
+  height: 12px;
+
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.header-user-nav .user-nav-logout {
+  margin-right: 45px;
+  opacity: 0.3;
+}
+
+/*MAIN*/
+
+.catalog-subnavigation {
+  margin-bottom: 50px;
+  padding: 0 60px;
+}
+
+.catalog-subnavigation h1 {
+  margin: 0;
+  margin-bottom: 35px;
+  padding: 0;
+}
+
+/* breadcrums */
+
+.breadcrums {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
 .breadcrums li {
+  position: relative;
+  padding-right: 40px;
+
   font-size: 14px;
   line-height: 36px;
 
   opacity: 0.3;
 }
+
+.breadcrums li:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  width: 4px;
+  height: 7px;
+
+  background-image: url("../img/nav-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+/*Как сделать так, чтобы они располагались в середине паддинга, независимо от длины текста?*/
 
 .breadcrums li:hover {
   opacity: 0.6;
@@ -1064,36 +1136,93 @@ input[type="radio"].visually-hidden {
   opacity: 0.1;
 }
 
-/* !For sidebar! */
+/*!For catalog*/
 
-.sidebar-filter fieldset {
-  border: 0; /*Добавить fieldset border-top*/
+.catalog-catalog {
+  display: flex;
+  justify-content: space-between;
 }
 
-.sidebar {
+/* !For sidebar! */
+
+.catalog-catalog .sidebar {
+  position: relative;
+  width: 330px;
+  padding-left: 60px;
+  padding-right: 70px;
+}
+
+/*.catalog-catalog .sidebar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 470px;
+  background-color: #eeeeee;
+  background-repeat: repeat;
+  background-position: 0 0;
+}*/
+
+.sidebar .sidebar-heading {
+  min-width: 270px;
+  min-height: 70px;
+  padding-top: 25px;
+
   background-color: #dbdbdb;
 }
 
-.sidebar-filter {
-  background-color: #eeeeee;
+.sidebar-heading h2 {
+  margin: 0;
+  padding: 0;
 }
 
-.sidebar legend {
+.sidebar-filter fieldset {
+  border: 0;
+  border-top: 2px solid #000000;
+
+  /*Не получается отодвинуть стоимость*/
+}
+
+.sidebar-filter legend {
   font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
 }
 
-.sidebar label {
+.sidebar-filter label {
   font-size: 14px;
   line-height: 40px;
 }
-
 /* !For catalog sort! */
 
+.catalog-catalog .catalog {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .catalog-sort {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  min-height: 70px;
+  padding-left: 75px;
   background-color: #eeeeee;
+}
+
+.catalog-sort h2 {
+  margin: 0;
+  padding: 0;
+  padding-right: 45px;
+}
+
+.catalog-sort .sort-type {
+  display: flex;
+  min-width: 300px;
+  justify-content: space-between;
 }
 
 .sort-type li {
@@ -1111,14 +1240,84 @@ input[type="radio"].visually-hidden {
   opacity: 1;
 }
 
+.catalog-sort .sort-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 42px;
+  margin-left: auto;
+}
+
+.catalog-sort .sort-button {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  opacity: 0.2;
+}
+
+.catalog-sort .sort-button:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 11px;
+  height: 10px;
+}
+
+.catalog-sort .button-up:before {
+    background-image: url("../img/icon-up-dir.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.catalog-sort .button-down:before {
+    background-image: url("../img/icon-down-dir.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.catalog-sort .button-active {
+  opacity: 1;
+}
 
 /* !For catalog! */
+.catalog .catalog-container {
+  padding: 70px 0px 75px 70px;
+}
 
-.catalog-list h3 {
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/*For catalog card*/
+
+.catalog-item .catalog-image {
+  margin-bottom: 40px;
+}
+
+.catalog-item .item-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog-item .item-description h3 {
+  margin: 0;
+  margin-bottom: 55px;
+  padding: 0;
+  max-width: 255px;
+  white-space: pre-line; /*Вот туууут большая беда со вторым слайдом. перенос по дефису*/
+
   font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #000000;
+}
+
+.catalog-list .item-description p {
+  margin: 0;
+  padding: 0;
 }
 
 .catalog-price {
@@ -1129,6 +1328,11 @@ input[type="radio"].visually-hidden {
 }
 
 .pagination-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 70px;
   background-color: #eeeeee;
 }
 
@@ -1144,8 +1348,8 @@ input[type="radio"].visually-hidden {
 .pagination-back,
 .pagination-forward {
   display: inline-block;
-  width: 137px;
-  height: 70px;
+  width: 70px;
+  height: 20px;
 
   text-align: center;
   vertical-align: middle; /*Или добавляем span, или rgba*/
@@ -1167,7 +1371,16 @@ input[type="radio"].visually-hidden {
   opacity: 1;
 }
 
+.pagination-numbers {
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+}
+
 /* Hover catalog */
+.hover-link {
+  display: none;
+}
 
 .hover-compare {
   font-size: 13px;
