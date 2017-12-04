@@ -20,7 +20,6 @@
         </a>
 
         <div class="user-nav-search"><!--search-->
-          <!-- Можно не оборачивать в div? -->
           <input type="text" placeholder="Поиск по сайту" class="user-nav-input-search">
         </div>
 
@@ -277,9 +276,9 @@
           <div class="details-delivery-background"></div>
 
           <ul class="delivery-sidebar list">
-            <li><a class="sidebar-current button" >Доставка</a></li>
-            <li><a class="slider-button button" href="#">Гарантия</a></li>
-            <li><a class="slider-button button" href="#">Кредит</a></li>
+            <li><a class="button slider-button sidebar-current delivery-button">Доставка</a></li>
+            <li><a class= "button slider-button warranty-button" href="#">Гарантия</a></li>
+            <li><a class="button slider-button credit-button" href="#">Кредит</a></li>
           </ul>
 
           <div class="details-description">
@@ -439,28 +438,34 @@
 
     </footer>
 
-    <!--Module Form-->
+    <!--Modal Form-->
 
-    <form class="module-form" action="https://echo.htmlacademy.ru" method="post">
+    <form class="modal modal-form" action="https://echo.htmlacademy.ru" method="post">
       <fieldset>
         <legend class="visually-hidden">Форма обратной связи</legend>
 
-        <label for="user-name">Ваше имя:</label>
-        <input type="text" name="user-name" id="user-name" placeholder="Представтесь, пожалуйста" required>
+        <p class="input-paragraph">
+          <label for="user-name">Ваше имя:</label>
+          <input type="text" name="user-name" id="user-name" placeholder="Представтесь, пожалуйста" required>
+        </p>
 
-        <label for="user-email">Ваш e-mail:</label>
-        <input type="text" name="user-email" id="user-email" placeholder="Для отправки ответа" required>
+        <p class="input-paragraph">
+          <label for="user-email">Ваш e-mail:</label>
+          <input type="text" name="user-email" id="user-email" placeholder="Для отправки ответа" required>
+        </p>
 
-        <label for="user-feedback">Текст письма</label>
-        <textarea id="user-feedback" rows="10">В свободной форме</textarea>
+        <p class="textarea-paragraph">
+          <label for="user-feedback">Текст письма:</label>
+          <textarea id="user-feedback" rows="10">В свободной форме</textarea>
+        </p>
      </fieldset>
 
-      <button type="submit" class="button">Отправить</button>
+      <button type="submit" class="button send-button">Отправить</button>
       <button type="button" class="button-close" aria-label="Закрыть форму"></button>
     </form>
 
-    <!--Module Form-->
-    <div class="module-map">
+    <!--modal Form-->
+    <div class="modal modal-map">
       <img src="img/map-big.jpg" width="960" height="559" alt="Адрес магазина: улица Строителей, 15">
       <button type="button" class="button-close" aria-label="Закрыть карту"></button>
     </div>
