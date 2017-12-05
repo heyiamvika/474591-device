@@ -62,12 +62,12 @@ img {
 
 /* General classes */
 /*Убрать вот это и прописать каждому листу отдельно!*/
-.list {
+/*.list {
   list-style-type: none;
 
   margin: 0;
   padding: 0;
-}
+}*/
 /*В вебинаре по сеткам говорили, что margin: 0; padding: 0; лучше задавать каждому отдельному ul. Как лучше сделать? Сказали, что ни в коем случае так нельзя задавать*/
 
 .visually-hidden:not(:focus):not(:active),
@@ -160,6 +160,8 @@ input[type="radio"].visually-hidden {
 /* HEADER */
 
 .header {
+  position: relative; /*For white stripe*/
+
   min-height: 300px;
   margin-top: 40px;
 
@@ -221,6 +223,7 @@ input[type="radio"].visually-hidden {
 
 .user-nav-search input[type="text"] {
   width: 440px;
+
   border: none;
   background-color: inherit;
 
@@ -239,12 +242,17 @@ input[type="radio"].visually-hidden {
 .header-user-nav {
   display: flex;
   flex-wrap: wrap;
-  width: 500px;
-  margin-left: auto;
   justify-content: flex-start;
+
+  width: 500px;
+  margin: 0;
+  margin-left: auto;
   margin-bottom: 50px; /*В фотошопе - 50, Слишком большой margin выходит, почему? Где-то не обнулила?*/
+  padding: 0;
 
   line-height: 36px;
+
+  list-style-type: none;
 }
 
 /* !For user navigtion links! */
@@ -282,8 +290,8 @@ input[type="radio"].visually-hidden {
 
   width: 90px;
   margin-left: auto;
-  padding-left: 20px;
   margin-right: 40px;
+  padding-left: 20px;
 }
 
 .header-user-nav .user-nav-compare::before {
@@ -328,13 +336,16 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
+
   margin: 0;
   padding: 0;
+
+  list-style-type: none;
 }
 
 /* !For site catalog! */
 
-.header-site-nav .site-nav-catalog span {
+.header-site-nav span {
   position: relative;
 
   flex-grow: 1;
@@ -343,7 +354,7 @@ input[type="radio"].visually-hidden {
   padding-right: 28px;
 }
 
-.header-site-nav .site-nav-catalog span:after {
+.header-site-nav span:after {
   content: "";
 
   position: absolute;
@@ -359,22 +370,31 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.header-site-nav .site-nav-catalog  .site-nav-hidden-menu {
+.header-site-nav .site-nav-hidden-menu {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-content: flex-start;
+
   width: 550px;
   height: 85px;
-  flex-wrap: wrap;
-
+  margin: 0;
   margin-top: 40px;
+  padding: 0;
+  list-style-type: none;
 }
 
-.header-site-nav .site-nav-catalog:hover .site-nav-hidden-menu li {
+.header-site-nav .column {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.site-nav-catalog:hover .site-nav-hidden-menu li{
   display: block;
 }
 
-.header-site-nav .site-nav-catalog .site-nav-hidden-menu li{
+.site-nav-catalog .site-nav-hidden-menu li {
   display: none;
   margin-right: 40px;
 }
@@ -411,6 +431,48 @@ input[type="radio"].visually-hidden {
   margin-left: auto;
 }
 
+/*for header decoration */
+
+.header .white-stripe {
+  position: absolute;
+  top: 225px;
+  right: 460px;
+
+  width: 100px;
+  height: 7px;
+
+  background-color: #ffffff;
+}
+
+.header .decoration-number {
+  position: absolute;
+  top: 178px; /*На макете - 188, на деле - чуть меньше*/
+  right: 47px;
+
+  width: 212px;
+  height: 200px;
+
+  font-size: 179.2px;
+  font-weight: 700;
+  line-height: 179.2px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  color: #ffffff;
+
+  background-color: transparent;
+}
+
+.header .number-1 {
+
+}
+
+.header .number-2 {
+  display: none;
+}
+
+.header .number-3 {
+  display: none;
+}
+
 /* MAIN */
 
 /* For slider */
@@ -421,10 +483,6 @@ input[type="radio"].visually-hidden {
 }
 
 .main-item-1 {
-  /*position: absolute;
-  top: 0;
-  left: 0;*/
-  /*z-index: -1;*/
 }
 
 .main-item-2 {
@@ -454,7 +512,6 @@ input[type="radio"].visually-hidden {
 }
 
 .item-image {
-  /*width: 400px;*/
   margin-top: -100px;
   margin-right: 125px;
 }
@@ -465,7 +522,6 @@ input[type="radio"].visually-hidden {
   justify-content: flex-start;
 
   margin-top: -30px;
-  /*width: 480px;*/
 }
 
 .item-description .item-description-heading {
@@ -550,6 +606,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 160px;
   height: 160px;
   margin-bottom: 38px;
@@ -578,6 +635,7 @@ input[type="radio"].visually-hidden {
 
 .details-delivery {
   position: relative;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -587,7 +645,6 @@ input[type="radio"].visually-hidden {
   position: absolute;
   top: 55px;
   left: -160px;
-
   z-index: -1;
 
   min-width: 1440px;
@@ -599,10 +656,12 @@ input[type="radio"].visually-hidden {
 /*sidebar*/
 .details-delivery .delivery-sidebar {
   position: relative;
+
+  width: 286px;
   margin: 0;
   padding: 0;
 
-  width: 286px;
+  list-style-type: none;
 }
 
 .details-delivery .delivery-sidebar:before {
@@ -707,6 +766,10 @@ input[type="radio"].visually-hidden {
 .partners-logos {
   display: flex;
   justify-content: space-between;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .main-logos img {
@@ -762,7 +825,7 @@ input[type="radio"].visually-hidden {
   margin-right: 120px;
 }
 
-.main-about ul { /*Не работает через класс .main-about .about-partners*/
+.main-about .about-partners {
   margin: 0;
   margin-bottom: 60px;
   padding: 0;
@@ -845,6 +908,10 @@ input[type="radio"].visually-hidden {
 .footer-user-nav {
   display: flex;
   justify-content: flex-end;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .footer-user-nav .footer-icons {
@@ -899,7 +966,12 @@ input[type="radio"].visually-hidden {
 .footer-site-nav {
   display: flex;
   justify-content: space-between;
+
   width: 436px;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
 }
 
 .footer-site-nav a {
@@ -935,7 +1007,11 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
   width: 141px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* !For social buttons! */
@@ -1018,14 +1094,20 @@ input[type="radio"].visually-hidden {
   transform: rotate(-45deg);
 }
 
+.button-close:hover {
+  background-color: #f0c52e;
+}
+
+.button-close:active {
+  opacity: 0.3;
+}
+
 /* Registration Form */
 
 .modal-form {
   /*position: fixed;
   top: 1054px;
   left: 50%;*/
-  border: 1px solid black;
-  /*Временно*/
   padding: 95px 100px;
 
   box-shadow: 0px 20px 40px 0px;
@@ -1089,8 +1171,6 @@ height: 80px;
 
 .modal-form input[type="text"]:focus,
 .modal-form textarea:focus {
-  font-size: 14px;
-  line-height: 18px;
   color: #000000;
   opacity: 1;
 
@@ -1100,11 +1180,11 @@ height: 80px;
 
 .modal-form input[type="text"]:hover,
 .modal-form textarea:hover {
-  font-size: 14px;
-  line-height: 18px;
-  opacity: 0.4;
-
   background-color: #aab2b5;
+}
+
+.modal-form input[type="text"]:invalid {
+  background-color: #f6dada;
 }
 
 .fix-button {
@@ -1358,6 +1438,17 @@ height: 80px;
     content: "";
 }
 
+/*For checkbox/radio states*/
+
+.checkbox:hover label:before,
+.checkbox:hover label:after,
+.radio:hover label:before,
+.radio:hover label:after {
+  opacity: 0.6;
+}
+
+/*Добавить для других состояний*/
+
 /* !For catalog sort! */
 
 .catalog-catalog .catalog {
@@ -1419,6 +1510,14 @@ height: 80px;
   opacity: 0.2;
 }
 
+.catalog-sort .sort-button:hover {
+  opacity: 0.4;
+}
+
+.catalog-sort .sort-button:active {
+  opacity: 1;
+}
+
 .catalog-sort .sort-button:before {
   content: "";
   position: absolute;
@@ -1438,10 +1537,6 @@ height: 80px;
     background-image: url("../img/icon-down-dir.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
-}
-
-.catalog-sort .button-active {
-  opacity: 1;
 }
 
 /* !For catalog! */
@@ -1493,10 +1588,13 @@ height: 80px;
 
 .pagination-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   min-height: 70px;
+  margin: 0;
+  padding: 0;
+
   background-color: #eeeeee;
 }
 
@@ -1511,12 +1609,13 @@ height: 80px;
 
 .pagination-back,
 .pagination-forward {
-  display: inline-block;
-  width: 70px;
-  height: 20px;
+  display: block;
+  width: 125px;
+  height: 70px;
 
   text-align: center;
-  vertical-align: middle; /*Или добавляем span, или rgba*/
+  /*vertical-align: middle;*/
+   /*Не работает это свойство*/
 }
 
 .pagination-back:hover,
@@ -1527,7 +1626,11 @@ height: 80px;
 .pagination-back:active,
 .pagination-forward:active {
   background-color: #d9d9d9;
-  opacity: 0.3; /* Как задать opacity только тексту? */
+}
+
+.pagination-back:active span,
+.pagination-forward:active span{
+  opacity: 0.3;
 }
 
 .pagination-item-current,
