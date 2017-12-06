@@ -42,7 +42,7 @@ body {
   /*В catalog.html сама ширина страницы меньше - 1440px, в index.html - 1480px;*/
 
   margin: 0;
-  padding: 0 20px;
+  padding: 0;
 
   font-weight: 300;
   font-size: 15px;
@@ -338,7 +338,6 @@ input[type="radio"].visually-hidden {
 
 .header-site-nav {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: flex-start;
 
   margin: 0;
@@ -349,10 +348,13 @@ input[type="radio"].visually-hidden {
 
 /* !For site catalog! */
 
+.site-nav-catalog {
+  flex-grow: 1;
+  max-width: 540px;
+}
+
 .site-nav-catalog span {
   position: relative;
-
-  flex-grow: 1;
 
   min-width: 250px;
   padding-right: 28px;
@@ -383,19 +385,19 @@ input[type="radio"].visually-hidden {
   width: 550px;
   height: 85px;
   margin: 0;
-  margin-top: 40px;
   padding: 0;
+  padding-top: 20px;
   list-style-type: none;
+}
+
+.site-nav-catalog:hover .site-nav-hidden-menu li {
+  display: block;
 }
 
 .header-site-nav .column {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.site-nav-catalog:hover .site-nav-hidden-menu li{
-  display: block;
 }
 
 .site-nav-catalog .site-nav-hidden-menu li {
@@ -421,24 +423,12 @@ input[type="radio"].visually-hidden {
 
 /*.....*/
 
-/*.header-site-nav .site-nav-container {
-  display: flex;
-  justify-content: space-between;
-  min-width: 500px;
-}*/
-
 .header-site-nav .site-nav-delivery{
-  /*margin-left: auto;*/
-  /*margin-right: 45px;*/
-}
-
-.header-site-nav .site-nav-warranty{
-  /*margin-left: auto;*/
-  /*margin-right: 100px;*/
+  margin-right: 35px;
 }
 
 .header-site-nav .site-nav-contacts{
-  /*margin-left: auto;*/
+  margin-left: auto;
 }
 
 /*for header decoration */
@@ -531,6 +521,8 @@ input[type="radio"].visually-hidden {
 }
 
 .item-about {
+  position: relative; /*For slider-switch*/
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -568,18 +560,17 @@ input[type="radio"].visually-hidden {
 
 .item-about .item-characteristics {
   display: table;
-  width: 500px;
+
+  min-width: 500px;
 }
 
 .item-characteristics tr {
-  /*display: table-row;*/
   margin: 0;
   padding: 0;
   text-align: left;
 }
 
 .item-characteristics th {
-  /*display: table-cell;*/
   margin: 0;
   padding: 0;
   padding-bottom: 15px;
@@ -592,13 +583,40 @@ input[type="radio"].visually-hidden {
 }
 
 .item-characteristics td {
-  /*display: table-cell;*/
   margin: 0;
   padding: 0;
 
   font-size: 13px;
   line-height: 20px;
 }
+
+/*For slider switchers*/
+
+.slider-switch {
+  position: absolute;
+  top: 247px;
+  right: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.slider-switch div {
+  width: 12px;
+  height: 12px;
+
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+/*.slider-switch .switch-active {
+  width: 4px;
+  height: 4px;
+
+  border: 1px solid #000000;
+  border-radius: 50%;
+}*/
 
 /* !For catalog! */
 
@@ -868,22 +886,25 @@ input[type="radio"].visually-hidden {
   list-style-type: none; /* !Тут нужно вставлять иконкой или можно задать opacity?! SVG!*/
 }
 
-.main-about li {
+.about-partners li {
   position: relative;
 
   padding-left: 35px;
 }
 
-/*Как вот тут вставить и перекрасить?*/
-/*.main-about li:before {
+.about-partners li:before {
   content: "";
 
   position: absolute;
-  top: 0px;
+  top: 15px;
   left: 0px;
-  background-image: url("../img/slider-button-empty.svg");
-  background-repeat: no-repeat;
-}*/
+
+  width: 4px;
+  height: 4px;
+
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+}
 
 /* Contacts */
 .main-contacts {
@@ -996,15 +1017,14 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  /*Приблизительно сейчас, потом изменить*/
+  margin-bottom: 40px;
 }
 
 .footer-site-nav {
   display: flex;
   justify-content: space-between;
 
-  width: 436px;
+  width: 440px;
   margin: 0;
   padding: 0;
 
@@ -1043,9 +1063,8 @@ input[type="radio"].visually-hidden {
 .footer-social {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 
-  width: 141px;
+  width: 145px;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -1227,13 +1246,22 @@ height: 80px;
 .fix-button {
   margin: 0;
   padding: 0;
-  /*margin-left: 10px;
-  margin-top: 50px;*/
 
   background-color: transparent;
 }
 
-/*Как обозначить невалидное значение?*/
+/*.fix-button:before {
+  top: 6px;
+  left: 0;
+}
+
+.fix-button:hover:before {
+  top: -12px;
+}
+
+.fix-button:active:before {
+  top: -4px;
+}*/
 
 /* Map */
 
@@ -1250,15 +1278,14 @@ height: 80px;
 /*HEADER*/
 
 .catalog-header {
-  min-height: 185px; /*Вообще на это не реагирует*/
+  max-height: 186px; /*Вообще на это не реагирует*/
   margin-bottom: 40px;
 }
 
 .header-user-nav .user-nav-username {
-  flex-grow: 1;
   position: relative;
   margin-right: 20px;
-  padding-left: 28px;
+  padding-left: 26px;
 }
 
 .header-user-nav .user-nav-username::before {
@@ -1276,7 +1303,7 @@ height: 80px;
 }
 
 .header-user-nav .user-nav-logout {
-  margin-right: 45px;
+  margin-right: 63px;
   opacity: 0.3;
 }
 
@@ -1317,7 +1344,7 @@ height: 80px;
   content: "";
   position: absolute;
   top: 15px;
-  left: 0px;
+  right: 20px;
   width: 4px;
   height: 7px;
 
@@ -1352,21 +1379,35 @@ height: 80px;
   padding-right: 70px;
 }
 
-/*.catalog-catalog .sidebar:before {
+.catalog-catalog .sidebar:before {
   content: "";
+
   position: absolute;
   top: 0;
-  left: 0;
+  left: -140px;
+  z-index: -1;
+
   width: 470px;
+  height: 1372px;
   background-color: #eeeeee;
-  background-repeat: repeat;
-  background-position: 0 0;
-}*/
+}
 
 .sidebar .sidebar-heading {
   min-width: 270px;
   min-height: 70px;
   padding-top: 25px;
+}
+
+.sidebar .sidebar-heading:before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -140px;
+  z-index: -1;
+
+  width: 470px;
+  height: 70px;
 
   background-color: #dbdbdb;
 }
@@ -1376,15 +1417,29 @@ height: 80px;
   padding: 0;
 }
 
+.sidebar .sidebar-filter {
+  padding-top: 50px;
+}
+
 .sidebar-filter fieldset {
   width: 200px;
-  border: 0;
-  border-top: 2px solid #000000;
+  margin: 0;
+  padding: 0;
 
-  /*Не получается отодвинуть стоимость*/
+  padding-bottom: 20px;
+  border: 0;
+  border-bottom: 2px solid #000000;
+}
+
+.sidebar-filter fieldset:last-of-type {
+  border: 0;
+  margin-bottom: 30px;
 }
 
 .sidebar-filter legend {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
   font-weight: 700;
   font-size: 18px;
   font-family: "Gilroy", "Arial", sans-serif;
@@ -1505,12 +1560,27 @@ height: 80px;
 }
 
 .catalog-sort {
+  position: relative;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   min-height: 70px;
   padding-left: 75px;
+  background-color: #eeeeee;
+}
+
+.catalog-sort:before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0px;
+  z-index: -1;
+
+  width: 970px;
+  height: 70px;
   background-color: #eeeeee;
 }
 
@@ -1605,6 +1675,32 @@ height: 80px;
 
 /*For catalog card*/
 
+/*new item*/
+
+.catalog-item {
+  position: relative;
+}
+
+.catalog-item .new-item {
+  position: absolute;
+  top: 29px;
+  right: 27px;
+
+  width: 60px;
+  height: 60px;
+
+  font-weight: 700;
+  font-size: 14px;
+  font-family: "Gilroy", "Arial", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+
+  border: 1px solid #000000;
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.1;
+}
+
 .catalog-item .catalog-image {
   margin-bottom: 40px;
 }
@@ -1638,6 +1734,8 @@ height: 80px;
   font-family: "Gilroy", "Arial", sans-serif;
   color: #464646;
 }
+
+/*pagination*/
 
 .pagination-list {
   display: flex;
@@ -1701,8 +1799,25 @@ height: 80px;
 }
 
 /* Hover catalog */
-.hover-link {
+.catalog-item .hover-link {
   display: none;
+}
+
+.catalog-item:hover img {
+  opacity: 0.7;
+}
+
+.catalog-item:hover .hover-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 360px;
+  height: 380px;
 }
 
 .hover-compare {
