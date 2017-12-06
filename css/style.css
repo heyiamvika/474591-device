@@ -46,7 +46,7 @@ body {
 
   font-weight: 300;
   font-size: 15px;
-  line-height: 30px;
+  line-height: 2;
   letter-spacing: 0.15px;
   font-family: "Open Sans", "Arial", sans-serif;
   color: #464646;
@@ -110,8 +110,10 @@ input[type="radio"].visually-hidden {
   text-align: center;
   color: #000000;
   text-transform: uppercase;
+  line-height: 30px;
   letter-spacing: 3.6px;
 
+  background-color: transparent;
   outline: 0;
   border: none;
 }
@@ -136,7 +138,7 @@ input[type="radio"].visually-hidden {
   left: 0px;
 }
 
-.button:active {
+.button:active:before {
   height: 40px;
   color: rgba(0, 0, 0, 0.3);
 }
@@ -165,7 +167,7 @@ input[type="radio"].visually-hidden {
 .header {
   position: relative; /*For white stripe*/
 
-  min-height: 300px;
+  min-height: 186px;
   margin-top: 40px;
 
   background-color: #f7e296;
@@ -186,8 +188,8 @@ input[type="radio"].visually-hidden {
 
 .header-logo {
   position: absolute;
-  top: -19px;
-  left: 58px;
+  top: -17px;
+  left: 59px;
 }
 
 .header-logo:hover {
@@ -202,11 +204,19 @@ input[type="radio"].visually-hidden {
 
 /* !For search! */
 
+.header-nav .user-navigation {
+  display: flex;
+
+  margin-top: 30px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .header-nav .user-nav-search { /*Тут должна показываться кнопка, у которой тоже три состояния*/
   position: relative;
   flex-grow: 1;
 
-  padding-left: 35px;
+  padding-left: 36px;
 
   opacity: 1;
 }
@@ -215,8 +225,8 @@ input[type="radio"].visually-hidden {
   content: "";
 
   position: absolute;
-  top: 7px;
-  left: 0px;
+  top: 8px;
+  left: 2px;
   width: 16px;
   height: 16px;
 
@@ -376,8 +386,12 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.header-site-nav .site-nav-hidden-menu {
-  display: flex;
+.site-nav-catalog .site-nav-hidden-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: flex-start;
@@ -385,24 +399,25 @@ input[type="radio"].visually-hidden {
   width: 550px;
   height: 85px;
   margin: 0;
+  margin-right: 40px;
   padding: 0;
   padding-top: 20px;
   list-style-type: none;
 }
 
-.site-nav-catalog:hover .site-nav-hidden-menu li {
-  display: block;
+.site-nav-catalog:hover .site-nav-hidden-menu {
+  display: flex;
+}
+
+.header-site-nav {
+  position: relative;
+  /*Для скрытого меню*/
 }
 
 .header-site-nav .column {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.site-nav-catalog .site-nav-hidden-menu li {
-  display: none;
-  margin-right: 40px;
 }
 
 .header-site-nav > li a:hover {
@@ -521,7 +536,7 @@ input[type="radio"].visually-hidden {
 }
 
 .item-about {
-  position: relative; /*For slider-switch*/
+  /*position: relative; /*For slider-switch*/*/
 
   display: flex;
   flex-direction: column;
@@ -592,7 +607,7 @@ input[type="radio"].visually-hidden {
 
 /*For slider switchers*/
 
-.slider-switch {
+/*.slider-switch {
   position: absolute;
   top: 247px;
   right: 22px;
@@ -608,7 +623,7 @@ input[type="radio"].visually-hidden {
 
   border: 1px solid #000000;
   border-radius: 50%;
-}
+}*/
 
 /*.slider-switch .switch-active {
   width: 4px;
@@ -715,16 +730,20 @@ input[type="radio"].visually-hidden {
 
 .details-delivery .delivery-sidebar .sidebar-current {
     width: 277px;
-    height: 40px;
-    margin: 0;
-    margin-bottom: 18px;
-    padding: 0;
-    padding-left: 20px;
-    padding-top: 5px;
+    /*height: 40px;*/
+    margin: 0 0 18px 0;
+    /*margin-bottom: 18px;*/
+    padding: 5px 0 5px 20px;
+    /*padding-left: 20px;
+    padding-top: 5px;*/
     text-align: left;
 
     color: #f7e184;
     background-color: #000000;
+}
+
+.details-delivery .delivery-sidebar .sidebar-current:before {
+  display: none;
 }
 
 .delivery-sidebar .slider-button {
@@ -736,6 +755,7 @@ input[type="radio"].visually-hidden {
 }
 
 .delivery-sidebar .slider-button:active{
+
     width: 277px;
     height: 40px;
     padding: 0;
@@ -745,6 +765,10 @@ input[type="radio"].visually-hidden {
 
     color: #f7e184;
     background-color: #000000;
+}
+
+.delivery-sidebar .slider-button:active:before {
+  top: 0;
 }
 
 /*slide*/
@@ -1243,26 +1267,6 @@ height: 80px;
   background-color: #f6dada;
 }
 
-.fix-button {
-  margin: 0;
-  padding: 0;
-
-  background-color: transparent;
-}
-
-/*.fix-button:before {
-  top: 6px;
-  left: 0;
-}
-
-.fix-button:hover:before {
-  top: -12px;
-}
-
-.fix-button:active:before {
-  top: -4px;
-}*/
-
 /* Map */
 
 .modal-map {
@@ -1276,11 +1280,6 @@ height: 80px;
 /* CATALOG. CSS */
 
 /*HEADER*/
-
-.catalog-header {
-  max-height: 186px; /*Вообще на это не реагирует*/
-  margin-bottom: 40px;
-}
 
 .header-user-nav .user-nav-username {
   position: relative;
@@ -1310,13 +1309,13 @@ height: 80px;
 /*MAIN*/
 
 .catalog-subnavigation {
-  margin-bottom: 50px;
-  padding: 0 60px;
+  margin-bottom: 20px;
+  padding: 15px 60px;
 }
 
 .catalog-subnavigation h1 {
   margin: 0;
-  margin-bottom: 35px;
+  /*margin-bottom: 35px;*/
   padding: 0;
 }
 
@@ -1332,7 +1331,7 @@ height: 80px;
 
 .breadcrums li {
   position: relative;
-  padding-right: 40px;
+  padding-right: 36px;
 
   font-size: 14px;
   line-height: 36px;
@@ -1340,11 +1339,15 @@ height: 80px;
   opacity: 0.3;
 }
 
+.breadcrums li:last-of-type:after {
+  display: none;
+}
+
 .breadcrums li:after {
   content: "";
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 16px;
   width: 4px;
   height: 7px;
 
@@ -1679,6 +1682,8 @@ height: 80px;
 
 .catalog-item {
   position: relative;
+
+  margin-bottom: 27px;
 }
 
 .catalog-item .new-item {
@@ -1686,12 +1691,15 @@ height: 80px;
   top: 29px;
   right: 27px;
 
+  display: inline-block;
+
   width: 60px;
   height: 60px;
 
   font-weight: 700;
   font-size: 14px;
   font-family: "Gilroy", "Arial", sans-serif;
+  line-height: 60px;
   text-transform: uppercase;
   text-align: center;
 
@@ -1702,7 +1710,7 @@ height: 80px;
 }
 
 .catalog-item .catalog-image {
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
 
 .catalog-item .item-description {
@@ -1712,7 +1720,6 @@ height: 80px;
 
 .catalog-item .item-description h3 {
   margin: 0;
-  margin-bottom: 55px;
   padding: 0;
   max-width: 255px;
   white-space: pre-line; /*Вот туууут большая беда со вторым слайдом. перенос по дефису*/
@@ -1740,7 +1747,6 @@ height: 80px;
 .pagination-list {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   min-height: 70px;
   margin: 0;
@@ -1760,13 +1766,10 @@ height: 80px;
 
 .pagination-back,
 .pagination-forward {
-  display: block;
+  display: flex;
   width: 125px;
-  height: 70px;
-
-  text-align: center;
-  /*vertical-align: middle;*/
-   /*Не работает это свойство*/
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination-back:hover,
@@ -1792,6 +1795,7 @@ height: 80px;
 .pagination-numbers {
   display: flex;
   justify-content: space-between;
+  align-self: center;
   width: 90px;
   margin: 0;
   padding: 0;
