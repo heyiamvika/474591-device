@@ -19,19 +19,25 @@
           <img src="img/logo.svg" width="168" height="53" alt="Логотип магазина">
         </a>
 
-        <div class="user-nav-search"><!--search-->
-          <input type="text" placeholder="Поиск по сайту" class="user-nav-input-search">
-        </div>
+        <div class="user-navigation">
 
-        <ul class="header-user-nav list">
-          <li class="user-nav-login"><a href="login.html">Войти</a></li>
-          <li class="user-nav-compare"><a href="#">Сравнить</a></li>
-          <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
-        </ul>
+          <form class="user-nav-search"><!--search-->
+            <input type="text" placeholder="Поиск по сайту" class="user-nav-input-search">
+            <div class="user-nav-find-button"><span>Найти</span></div>
+          </form>
+
+          <ul class="header-user-nav list">
+            <li class="user-nav-login"><a href="login.html">Войти</a></li>
+            <li class="user-nav-compare"><a href="#">Сравнить</a></li>
+            <li class="user-nav-shoppingbag"><a href="#">Корзина</a></li>
+          </ul>
+
+        </div>
 
         <ul class="header-site-nav list">
           <li class="site-nav-catalog"><a href="#" class="gilroy-link"><span>Каталог товаров</span></a>
 
+            <div class="hidden-menu-background">
              <ul class="list site-nav-hidden-menu">
                <li>
                  <ul class="list column">
@@ -51,7 +57,8 @@
                    <li><a href="#">Квадрокоптеры</a></li>
                  </ul>
                </li>
-            </ul>
+             </ul>
+            </div>
 
           </li>
           <!-- <div class="site-nav-container"> -->
@@ -76,135 +83,137 @@
       <section class="main-item">
         <h1 class="visually-hidden">Популярные товары</h1>
 
+        <div class="slider-controls">
+          <div class="active"></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <ul class="slider-list">
         <!--slider1-->
 
-        <section class="main-item-flex main-item-1">
+          <li class="main-item-flex main-item-1">
 
-          <h2 class="visually-hidden">Селфи-палка</h2>
+            <h2 class="visually-hidden">Селфи-палка</h2>
 
-          <div class="item-image">
-            <img src="img/slider-1.png" width="384" height="486" alt="Селфи-палка">
-          </div>
+            <div class="item-image">
+              <img src="img/slider-1.png" width="384" height="486" alt="Селфи-палка">
+            </div>
 
-          <div class="item-about">
+            <div class="item-about">
 
-            <div class="item-description">
-              <p class="gilroy-heading item-description-heading"><b>Делай селфи, как Бен Стиллер!</b></p>
+              <div class="item-description">
+                <p class="gilroy-heading item-description-heading"><b>Делай селфи, как Бен Стиллер!</b></p>
 
-              <p class="item-description-paragraph">Самая длинная палка для селфи доступна в нашем магазине.
+                <p class="item-description-paragraph">Самая длинная палка для селфи доступна в нашем магазине.
                 Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+              </div>
 
-            </div>
+              <div class="item-details">
+                <a href="#" class="button">Подробнее</a>
+                <!--details-->
+              </div>
 
-            <div class="item-details">
-              <a href="#" class="button">Подробнее</a>
-              <!--details-->
-            </div>
-
-            <table class="item-characteristics">
-              <!--characteristics-->
-              <thead>
+              <table class="item-characteristics">
+                <!--characteristics-->
+                <thead>
+                  <tr>
+                    <th>8,5 м</th>
+                    <th>5 кг</th>
+                    <th>Карбон</th>
+                  </tr>
+                </thead>
                 <tr>
-                  <th>8,5 м</th>
-                  <th>5 кг</th>
-                  <th>Карбон</th>
+                  <td>Длина палки</td>
+                  <td>Вес палки</td>
+                  <td>Материал</td>
                 </tr>
-              </thead>
-              <tr>
-                <td>Длина палки</td>
-                <td>Вес палки</td>
-                <td>Материал</td>
-              </tr>
-            </table>
+              </table>
 
-            <!-- <div class="slider-switch">
-              <div><div class="switch-active"></div></div>
-              <div></div>
-              <div></div>
-            </div> -->
+            </div>
 
-          </div>
-
-        </section>
+          </li>
 
         <!--slider 2-->
 
-        <section class="main-item-flex main-item-2">
-          <h2 class="visually-hidden">Фитнес-браслет</h2>
+          <li class="main-item-flex main-item-2">
+            <h2 class="visually-hidden">Фитнес-браслет</h2>
 
-          <div class="item-image">
-            <img src="img/slider-2.png" width="384" height="485" alt="Фитнес-браслет">
-          </div>
-
-          <div class="item-about">
-
-            <div class="item-description">
-              <p class="gilroy-heading item-description-heading"><b>Худеем правильно!</b></p>
-
-              <p class="item-description-paragraph">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
-
+            <div class="item-image">
+              <img src="img/slider-2.png" width="384" height="485" alt="Фитнес-браслет">
             </div>
 
-            <div class="item-details">
-              <a href="#" class="button">Подробнее</a>
-              <!--details-->
-            </div>
+            <div class="item-about">
 
-            <table class="item-characteristics">
-              <!--characteristics-->
-              <thead>
+              <div class="item-description">
+                <p class="gilroy-heading item-description-heading"><b>Худеем правильно!</b></p>
+
+                <p class="item-description-paragraph">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+
+              </div>
+
+              <div class="item-details">
+                <a href="#" class="button">Подробнее</a>
+                <!--details-->
+              </div>
+
+              <table class="item-characteristics">
+                <!--characteristics-->
+                <thead>
+                  <tr>
+                    <th>48 часов</th>
+                  </tr>
+                </thead>
                 <tr>
-                  <th>48 часов</th>
+                  <td>Без подзарядки</td>
                 </tr>
-              </thead>
-              <tr>
-                <td>Без подзарядки</td>
-              </tr>
-            </table>
+              </table>
 
-          </div>
+            </div>
 
-        </section>
+          </li>
 
         <!--slider 3-->
 
-        <section class="main-item-flex main-item-3">
-          <h2 class="visually-hidden">Квадрокоптер</h2>
+          <li class="main-item-flex main-item-3">
+            <h2 class="visually-hidden">Квадрокоптер</h2>
 
-          <div class="item-image">
-            <img src="img/slider-3.png" width="384" height="485" alt="Квадрокоптер">
-          </div>
-
-          <div class="item-about">
-
-            <div class="item-description">
-              <p class="gilroy-heading item-description-heading"><b>Порхает как бабочка, жалит как пчела!</b></p>
-
-              <p class="item-description-paragraph">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+            <div class="item-image">
+              <img src="img/slider-3.png" width="384" height="485" alt="Квадрокоптер">
             </div>
 
-            <div class="item-details">
-              <a href="#" class="button">Подробнее</a>
-              <!--details-->
-            </div>
+            <div class="item-about">
 
-            <table class="item-characteristics">
-              <!--characteristics-->
-              <thead>
+              <div class="item-description">
+                <p class="gilroy-heading item-description-heading"><b>Порхает как бабочка, жалит как пчела!</b></p>
+
+                <p class="item-description-paragraph">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+              </div>
+
+              <div class="item-details">
+                <a href="#" class="button">Подробнее</a>
+                <!--details-->
+              </div>
+
+              <table class="item-characteristics">
+                <!--characteristics-->
+                <thead>
+                  <tr>
+                    <th>800 м</th>
+                    <th>50 м</th>
+                  </tr>
+                </thead>
                 <tr>
-                  <th>800 м</th>
-                  <th>50 м</th>
+                  <td>Дальность полета</td>
+                  <td>Радиус поражения</td>
                 </tr>
-              </thead>
-              <tr>
-                <td>Дальность полета</td>
-                <td>Радиус поражения</td>
-              </tr>
-            </table>
+              </table>
 
-          </div>
+            </div>
 
-        </section>
+          </li>
+
+        </ul>
 
       </section>
 
@@ -225,7 +234,7 @@
 
         <figure class="main-catalog-item">
 
-          <div class="catalog-item-image">
+          <div class="catalog-item-image image-down">
             <a href="catalog.html/monopods" class="catalog-item">
             <img src="img/popular-2.svg" width="86" height="117" alt="Экшн-камеры">
             </a>

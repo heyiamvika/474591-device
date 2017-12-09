@@ -22,9 +22,10 @@
 
         <div class="user-navigation">
 
-          <div class="user-nav-search"><!--search-->
+          <form class="user-nav-search"><!--search-->
             <input type="text" placeholder="Поиск по сайту" class="user-nav-input-search">
-          </div>
+            <div class="user-nav-find-button"><span>Найти</span></div>
+          </form>
 
           <ul class="header-user-nav list">
             <li class="user-nav-username"><a href="user-profile.html">Валентин Петухов</a></li>
@@ -99,15 +100,26 @@
 
             <fieldset></fieldset>
 
-            <fieldset>
+            <fieldset class="filter-price">
               <legend>Стоимость</legend>
-              <input type="number" name="filter-price-0" id="filter-price-0">
-              <label for="filter-price-0">0</label>
-              <input type="number" name="filter-price-5000" id="filter-price-5000">
-              <label for="filter-price-5000">5000</label>
+              <div class="range-filter">
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="toggle toggle-min"></div>
+                  <div class="toggle toggle-max"></div>
+                </div>
+                <div class="price-controls">
+                  <label class="min-price" for="filter-price-0">от</label>
+                  <input type="number" name="filter-price-0" id="filter-price-0" value="0">
+                  <label class="max-price" for="filter-price-5000">до</label>
+                  <input type="number" name="filter-price-5000" id="filter-price-5000" value="5000">
+                </div>
+              </div>
             </fieldset>
 
-            <fieldset class="color-checkbox">
+            <fieldset class="filter-checkbox">
               <legend>Цвет</legend>
 
               <div class="checkbox">
@@ -131,12 +143,12 @@
               </div>
 
               <div class="checkbox">
-                <input class="visually-hidden" type="checkbox" name="filter-color-pink" id="filter-color-pink">
+                <input class="visually-hidden" type="checkbox" name="filter-color-pink" id="filter-color-pink" disabled>
                 <label for="filter-color-pink">Розовый</label>
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="filter-radio">
               <legend>Bluetooth</legend>
 
               <div class="radio">
@@ -150,7 +162,7 @@
               </div>
             </fieldset>
 
-            <button class="button" type="submit">Показать</button>
+            <button class="button filter-button" type="submit">Показать</button>
 
           </form>
 
@@ -199,7 +211,7 @@
                   </div>
                 </div>
                 <div class="item-description">
-                  <h3><a href="#">Профессиональная селфи-палка</a></h3>
+                  <h3><a href="#">Профессиональная <br> селфи-палка</a></h3>
                   <p class="catalog-price">1500 руб.</p>
                 </div>
               </li>
