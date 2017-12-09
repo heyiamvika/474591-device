@@ -158,10 +158,14 @@ input[type="radio"].visually-hidden {
 .header {
   position: relative; /*For white stripe*/
 
-  min-height: 186px;
+  min-height: 300px;
   margin-top: 40px;
 
   background-color: #f7e296;
+}
+
+.catalog-header {
+  min-height: 186px;
 }
 
 .header-nav {
@@ -226,7 +230,7 @@ input[type="radio"].visually-hidden {
   background-position: 0 0;
 }
 
-.user-nav-search input[type="text"] {
+.user-nav-search input {
   width: 348px;
   padding-bottom: 13px;
 
@@ -239,7 +243,7 @@ input[type="radio"].visually-hidden {
 /*For search button*/
 
 .user-nav-search .user-nav-find-button {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -264,7 +268,11 @@ input[type="radio"].visually-hidden {
   background-color: #000000;
   opacity: 0.3;
 }
-/*Кнопка не отображается при фокусе. Почему?*/
+
+.user-nav-search input:focus + .user-nav-find-button {
+  display: flex;
+}
+/*Кнопка пропадает на состоянии active*/
 
 /*For search states*/
 
@@ -438,11 +446,15 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.site-nav-catalog .site-nav-hidden-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
+.site-nav-catalog .hidden-menu-background {
+  width: 1100px;
 
+  position: absolute;
+
+  background-color: #f7e296;
+}
+
+.site-nav-catalog .site-nav-hidden-menu {
   display: none;
   flex-wrap: wrap;
   flex-direction: column;
@@ -450,10 +462,10 @@ input[type="radio"].visually-hidden {
 
   width: 550px;
   height: 85px;
-  margin: 0;
-  margin-right: 40px;
-  padding: 0;
-  padding-top: 20px;
+  margin: 0 40px 0 0;
+  /*margin-right: 40px;*/
+  padding: 20px 0 0 0;
+  /*padding-top: 20px;*/
   list-style-type: none;
 }
 
@@ -535,12 +547,12 @@ input[type="radio"].visually-hidden {
 .slider-controls {
   position: absolute;
   top: 215px;
-  right: 85px;
+  right: 83px;
 
   display: flex;
   justify-content: space-between;
 
-  width: 80px;
+  width: 78px;
 }
 
 .slider-controls div {
@@ -562,8 +574,8 @@ input[type="radio"].visually-hidden {
   left: 2px;
   z-index: 1;
 
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
 
   border: 1px solid #000000;
   border-radius: 50%;
@@ -625,7 +637,7 @@ input[type="radio"].visually-hidden {
 }
 
 .item-about .item-details {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 /* !For item characteristics! */
@@ -668,7 +680,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 115px;
+  margin-bottom: 130px;
 }
 
 .main-catalog-item {
@@ -689,7 +701,7 @@ input[type="radio"].visually-hidden {
 
   width: 160px;
   height: 160px;
-  margin-bottom: 32px;
+  margin-bottom: 35px;
 
   background-color: #f7e296;
 }
@@ -703,19 +715,23 @@ input[type="radio"].visually-hidden {
   align-items: flex-end;
 }*/
 
+.main-catalog-item .catalog-item-description {
+  line-height: 20px;
+}
+
 .main-catalog-item:hover .catalog-item-image{
   background-color: #f0c52e;
   background-size: 160px 160px;
 }
 
 .main-catalog-item:active .catalog-item-image img,
-.main-catalog-item:active .catalog-item-description{
+.main-catalog-item:active .catalog-item-description {
   opacity: 0.3;
 }
 
 /* !For additional features! */
 .main-details {
-  margin-bottom: 225px;
+  margin-bottom: 240px;
 }
 
 .details-delivery {
@@ -744,7 +760,7 @@ input[type="radio"].visually-hidden {
 
   width: 286px;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 33px;
   padding: 0;
 
   list-style-type: none;
@@ -785,7 +801,6 @@ input[type="radio"].visually-hidden {
 }
 
 .delivery-sidebar .slider-button:active{
-
     width: 277px;
     height: 40px;
     padding: 0;
@@ -809,12 +824,23 @@ input[type="radio"].visually-hidden {
   width: 800px;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 40px;
+  padding: 10px 0 0 40px;
 }
 
 .description-slide .description-paragraph {
   width: 460px;
   margin-right: 100px;
+}
+
+.description-paragraph h2 {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.description-paragraph p {
+  margin: 0;
+  padding: 0;
 }
 
 .description-slide .description-image {
@@ -891,26 +917,26 @@ input[type="radio"].visually-hidden {
   align-items: flex-start;
   width: 1040px;
 
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 .main-company .black-stripe {
   width: 80px;
   height: 7px;
-  margin-bottom: 50px;
+  margin-bottom: 21px;
 
   background-color: #000000;
 }
 
 .main-company h2 {
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   padding: 0;
 }
 
 .main-company p {
   margin: 0;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   padding: 0;
 }
 
@@ -963,7 +989,8 @@ input[type="radio"].visually-hidden {
 /* Contacts */
 
 .main-contacts img {
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 55px;
 }
 
 .main-company .main-company-button {
