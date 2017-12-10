@@ -166,6 +166,7 @@ input[type="radio"].visually-hidden {
 
 .catalog-header {
   min-height: 186px;
+  max-height: 186px;
 }
 
 .header-nav {
@@ -446,15 +447,24 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.site-nav-catalog .hidden-menu-background {
-  width: 1100px;
+.site-nav-catalog .site-nav-hidden-menu:before {
+  content: "";
+
+  width: 1160px;
+  min-height: 155px;
 
   position: absolute;
+  top: 0px;
+  left: -60px;
 
   background-color: #f7e296;
+
+  z-index: -1;
 }
 
 .site-nav-catalog .site-nav-hidden-menu {
+  position: relative;
+
   display: none;
   flex-wrap: wrap;
   flex-direction: column;
@@ -463,14 +473,20 @@ input[type="radio"].visually-hidden {
   width: 550px;
   height: 85px;
   margin: 0 40px 0 0;
-  /*margin-right: 40px;*/
   padding: 20px 0 0 0;
-  /*padding-top: 20px;*/
   list-style-type: none;
 }
 
 .site-nav-catalog:hover .site-nav-hidden-menu {
   display: flex;
+
+  z-index: 1;
+}
+
+.site-nav-hidden-menu .column {
+  margin: 0;
+  padding: 0;
+  padding-right: 55px;
 }
 
 /*.....*/
@@ -637,7 +653,7 @@ input[type="radio"].visually-hidden {
 }
 
 .item-about .item-details {
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 /* !For item characteristics! */
@@ -657,13 +673,17 @@ input[type="radio"].visually-hidden {
 .item-characteristics th {
   margin: 0;
   padding: 0;
-  padding-bottom: 15px;
-  padding-right: 35px;
+  padding-right: 65px;
 
   font-weight: normal;
   font-size: 36px;
   font-family: "Gilroy", "Arial", sans-serif;
+  line-height: 54px;
   color: #000000;
+}
+
+.item-characteristics th:not(:first-child) {
+  padding-left: 10px;
 }
 
 .item-characteristics td {
@@ -672,6 +692,10 @@ input[type="radio"].visually-hidden {
 
   font-size: 13px;
   line-height: 20px;
+}
+
+.item-characteristics td:not(:first-child) {
+  padding-left: 10px;
 }
 
 /* !For catalog! */
@@ -707,12 +731,13 @@ input[type="radio"].visually-hidden {
 }
 
 .main-catalog-item .catalog-item-image a {
+  display: block;
   margin: auto;
 }
 
-/* Все равно не получается выровнять по низу
-.main-catalog-item .image-down {
-  align-items: flex-end;
+ /*Все равно не получается выровнять по низу*/
+/*.main-catalog-item .image-down {
+
 }*/
 
 .main-catalog-item .catalog-item-description {
@@ -947,14 +972,13 @@ input[type="radio"].visually-hidden {
 /* About us */
 
 .main-about {
-  min-width: 480px;
+  min-width: 500px;
 
-  margin-right: 120px;
+  margin-right: 100px;
 }
 
 .main-about .about-partners {
-  margin: 0;
-  margin-bottom: 60px;
+  margin: 70px 0 50px 0;
   padding: 0;
 
   font-weight: 700;
@@ -1016,7 +1040,7 @@ input[type="radio"].visually-hidden {
   flex-direction: column;
   justify-content: space-between;
 
-  min-height: 300px;
+  min-height: 305px;
   padding: 45px 0;
 }
 
@@ -1027,7 +1051,8 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
   align-items: center;
 
-  min-height: 70px;
+  min-height: 67px;
+  margin-bottom: 12px;
 }
 
 /* !For footer logo! */
@@ -1102,15 +1127,24 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  min-height: 44px;
+  margin-bottom: 35px;
+}
+
+.footer-nav .row-2 p {
+  margin: 0;
+  padding: 0;
 }
 
 .footer-site-nav {
+  align-self: flex-end;
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
 
-  width: 440px;
+  max-width: 429px;
   margin: 0;
+  margin-left: -35px;
   padding: 0;
 
   list-style-type: none;
@@ -1137,6 +1171,9 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  min-height: 75px;
+  margin-top: 5px;
 }
 
 .footer-nav .row-3 .yellow-stripe {
@@ -1149,8 +1186,9 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
 
-  width: 145px;
+  width: 140px;
   margin: 0;
+  margin-left: -55px;
   padding: 0;
   list-style-type: none;
 }
@@ -1189,6 +1227,7 @@ input[type="radio"].visually-hidden {
 /*POPUPS!*/
 
 .modal {
+  display: none;
   position: relative;
   width: 960px;
   height: 555px;
@@ -1660,15 +1699,17 @@ height: 80px;
 
 .checkbox input[type="checkbox"]:checked + label:after,
 .radio input[type="radio"]:checked + label:after {
-    content: "";
+  content: "";
 }
 
 /*For checkbox/radio states*/
 
-.checkbox input[type="checkbox"]:focus,
-.radio input[type="radio"]:focus {
-  outline: 2px solid #000000;
-}/*
+.sidebar-filter input:focus + label {
+  outline:none;
+  border: 2px solid #A6C8FF;
+  box-shadow: 0px 0px 5px  #A6C8FF;
+}
+
 Вот с этим аутлайном все равно не выходит*/
 
 .checkbox:hover label:before,
