@@ -38,7 +38,6 @@
 
 body {
   min-width: 1200px;
-  /*В catalog.html сама ширина страницы меньше - 1440px, в index.html - 1480px;*/
 
   margin: 0;
   padding: 0;
@@ -175,7 +174,6 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: space-between;
 
   padding: 10px 60px;
 }
@@ -639,9 +637,9 @@ input[type="radio"].visually-hidden {
   max-width: 396px;
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;  /*Рассчитала сама. От расстояния между буквами отнимаю сумму половинок высоты их строк*/
+  margin-bottom: 20px;
 
-  line-height: 56px; /*В фотошопе не указано, рассчитала сама. Расстояние между строками / 2 + font-size*/
+  line-height: 56px;
 }
 
 .item-description .item-description-paragraph {
@@ -649,7 +647,7 @@ input[type="radio"].visually-hidden {
 
   padding: 0;
   margin: 0;
-  margin-bottom: 38px; /*65 (расстояние между буквами) - половинка высоты строки параграфа - высота самого блока)*/
+  margin-bottom: 38px;
 }
 
 .item-about .item-details {
