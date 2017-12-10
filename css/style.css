@@ -1715,8 +1715,6 @@ height: 80px;
   box-shadow: 0px 0px 5px  #A6C8FF;
 }
 
-Вот с этим аутлайном все равно не выходит*/
-
 .checkbox:hover label:before,
 .checkbox:hover label:after,
 .radio:hover label:before,
@@ -1953,10 +1951,12 @@ height: 80px;
 .pagination-list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   min-height: 70px;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 
   background-color: #eeeeee;
 }
