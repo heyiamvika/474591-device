@@ -1138,11 +1138,10 @@ img {
 /*POPUPS!*/
 
 .modal {
-  display: none;
+  display: block;
   position: relative;
   width: 960px;
   height: 555px;
-  /*Нужно ли задавать фон?*/
 }
 
 /*close-button*/
@@ -1186,17 +1185,24 @@ img {
   opacity: 0.3;
 }
 
-/* Registration Form */
+/* Feedback Form */
 
 .modal-form {
+  position: absolute;
+  top: 1330px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 95px 100px;
   box-shadow: 0px 20px 40px 0px;
+  background-color: #ffffff;
 }
 
 .modal-form fieldset {
   width: 760px;
   height: 300px;
   margin: 0 auto;
+  margin-bottom: 40px;
+  padding: 0;
   border: none;
 }
 
@@ -1211,7 +1217,7 @@ img {
   margin-right: 35px;
 }
 
-.modal-form .input-paragraph {
+.input-paragraph {
   width: 360px;
   height: 80px;
 }
@@ -1260,9 +1266,20 @@ img {
   background-color: #f6dada;
 }
 
+.form-button {
+  width: 200px;
+}
+
+.form-button:before {
+  width: 200px;
+}
+
 /* Map */
 
 .modal-map {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 960px;
   height: 559px;
 }
