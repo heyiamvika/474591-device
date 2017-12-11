@@ -829,18 +829,28 @@ input[type="radio"].visually-hidden {
   width: 160px;
 }
 
-.delivery-sidebar .slider-button:active{
+.delivery-sidebar .slider-button:active {
+  position: relative;
+
   width: 277px;
-  margin: 0 0 18px 0;
+  height: 40px;
+  margin: 10px 0 20px 0;
   padding: 5px 0 5px 20px;
   text-align: left;
 
   color: #f7e184;
-  background-color: #000000;
 }
 
 .delivery-sidebar .slider-button:active:before {
-  top: 0;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 277px;
+  height: 40px;
+
+  background-color: #000000;
 }
 
 /*slide*/
