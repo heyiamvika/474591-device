@@ -1138,7 +1138,7 @@ img {
 /*POPUPS!*/
 
 .modal {
-  display: block;
+  display: none;
   position: relative;
   width: 960px;
   height: 555px;
@@ -1286,6 +1286,12 @@ img {
 
 .modal-map img {
   box-shadow: 0px 20px 40px 0px;
+}
+
+/* Modal show */
+
+.modal-show {
+  display: block;
 }
 
 /* CATALOG. CSS */
