@@ -1140,6 +1140,7 @@ img {
 .modal {
   display: none;
   position: relative;
+  /*For button-close*/
   width: 960px;
   height: 555px;
 }
@@ -1278,14 +1279,27 @@ img {
 
 .modal-map {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1205px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 960px;
   height: 559px;
 }
 
+.modal-map iframe {
+  position: absolute;
+  top: 1205px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
 .modal-map img {
   box-shadow: 0px 20px 40px 0px;
+  position: absolute;
+  top: 1205px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Modal show */
