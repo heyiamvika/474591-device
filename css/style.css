@@ -1355,8 +1355,9 @@ img {
 /* Feedback Form */
 
 .modal-form {
-  position: absolute;
-  top: 1330px;
+  position: fixed;
+  /*top: 1330px;*/
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -1473,10 +1474,46 @@ img {
   transform: translate(-50%, -50%);
 }
 
-/* Modal show */
+/* Modal animations and JS */
 
 .modal-show {
   display: block;
+  animation-name: popup-animation;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-direction: reverse;
+}
+
+.modal-error {
+  animation-name: popup-shake;
+  animation-duration: 0.6;
+  animation-iteration-count: 2;
+}
+
+/* Popup animation */
+
+@keyframes popup-animation {
+  to {
+    transform: translate( -50%, 1330px);
+  }
+}
+
+@@keyframes popup-shake {
+  0% {
+    transform: translateX(-50%);
+  }
+  25% {
+    transform: translateX(-45%);
+  }
+  50% {
+    transform: translateX(-55%);
+  }
+  75% {
+    transform: translateX(-45%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* CATALOG. CSS */

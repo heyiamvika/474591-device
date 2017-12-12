@@ -17,6 +17,8 @@ linkForm.addEventListener("click", function(evt) {
   userName.focus();
 });
 
+// Modal Form - close
+
 closeForm.addEventListener("click", function(evt) {
   evt.preventDefault();
   popupForm.classList.remove("modal-show");
@@ -30,7 +32,14 @@ window.addEventListener("keydown", function(evt) {
   }
 });
 
-// Form animation
+// Modal Form - error animation
+
+popupForm.addEventListener("submit", function(evt) {
+  if (!userName.value || !userEmail.value) {
+    evt.preventDefault();
+    popupForm.classList.add("modal-error");
+  }
+});
 
 // Modal Map
 
