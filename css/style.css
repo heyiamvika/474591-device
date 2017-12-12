@@ -1303,9 +1303,6 @@ img {
 /*close-button*/
 
 .button-close {
-  position: absolute;
-  top: 25px;
-  right: 22px;
   width: 55px;
   height: 55px;
   font-size: 0;
@@ -1341,6 +1338,18 @@ img {
 
 .button-close:active {
   opacity: 0.3;
+}
+
+.form-close {
+  position: absolute;
+  top: 25px;
+  right: 22px;
+}
+
+.map-close {
+  position: absolute;
+  top: 950px;
+  right: 22px;
 }
 
 /* Feedback Form */
@@ -1452,7 +1461,6 @@ img {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  z-index: 1;
 }
 
 .modal-map img {
