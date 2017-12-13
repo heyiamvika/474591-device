@@ -384,7 +384,7 @@ img {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  min-width: 1040px;
+  max-width: 1040px;
 }
 
 .header-site-nav .column {
@@ -487,7 +487,6 @@ img {
 
 .site-nav-contacts {
   margin-left: auto;
-  min-width: 120px;
 }
 
 /*for header decoration */
