@@ -229,7 +229,7 @@ img {
   width: 348px;
   padding-bottom: 13px;
   border: none;
-  background-color: inherit;
+  background-color: #f7e296;
   opacity: 0.3;
 }
 
@@ -1913,7 +1913,7 @@ img {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  min-width: 855px;
+  min-width: 830px;
 }
 
 .catalog-sort {
@@ -2031,8 +2031,6 @@ img {
 /* !For catalog! */
 
 .catalog-container {
-  flex-grow: 1;
-  min-width: 855px;
   padding: 70px 0px 75px 70px;
 }
 
@@ -2048,6 +2046,7 @@ img {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  max-width: 760px;
 }
 
 /* For catalog card */
