@@ -1657,7 +1657,7 @@ img {
 
 .sidebar {
   position: relative;
-  min-width: 330px;
+  width: 330px;
   padding-left: 60px;
   padding-right: 70px;
 }
@@ -1698,7 +1698,6 @@ img {
 
 .sidebar-filter {
   padding-top: 50px;
-  min-width: 330px;
 }
 
 .sidebar-filter fieldset {
@@ -1912,6 +1911,7 @@ img {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  min-width: 855px;
 }
 
 .catalog-sort {
@@ -2029,7 +2029,8 @@ img {
 /* !For catalog! */
 
 .catalog-container {
-  max-width: 865px;
+  flex-grow: 1;
+  min-width: 855px;
   padding: 70px 0px 75px 70px;
 }
 
