@@ -209,6 +209,8 @@ img {
   flex-grow: 1;
   padding-left: 36px;
   opacity: 1;
+  border: 0;
+  background-color: #f7e296;
 }
 
 .user-nav-search:before {
