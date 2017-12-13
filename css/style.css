@@ -730,7 +730,7 @@ img {
   background-color: #f7e296;
 }
 
-.main-catalog-item .catalog-item-image a {
+.catalog-item-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -763,7 +763,7 @@ img {
   background-size: 160px 160px;
 }
 
-.main-catalog-item:active .catalog-item-image img, .main-catalog-item:active .catalog-item-description {
+.main-catalog-item:active .catalog-item-img, .main-catalog-item:active .catalog-item-description {
   opacity: 0.3;
 }
 
