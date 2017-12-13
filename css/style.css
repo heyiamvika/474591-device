@@ -1827,6 +1827,8 @@ img {
   border: 2px solid #A6C8FF;
   -webkit-box-shadow: 0px 0px 5px #A6C8FF;
   box-shadow: 0px 0px 5px #A6C8FF;
+
+  margin-left: -2px;
 }
 
 .checkbox:hover label:before, .checkbox:hover label:after, .radio:hover label:before, .radio:hover label:after {
