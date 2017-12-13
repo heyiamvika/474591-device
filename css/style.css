@@ -2028,6 +2028,7 @@ img {
 /* !For catalog! */
 
 .catalog-container {
+  max-width: 855px;
   padding: 70px 0px 75px 70px;
 }
 
@@ -2051,6 +2052,7 @@ img {
 
 .catalog-item {
   position: relative;
+  flex-shrink: 1;
 }
 
 .catalog-item:first-child {
