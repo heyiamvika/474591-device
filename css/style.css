@@ -487,6 +487,7 @@ img {
 
 .site-nav-contacts {
   margin-left: auto;
+  min-width: 120px;
 }
 
 /*for header decoration */
