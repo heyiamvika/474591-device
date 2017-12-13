@@ -32,15 +32,6 @@ window.addEventListener("keydown", function(evt) {
   }
 });
 
-// Modal Form - error animation
-
-// popupForm.addEventListener("submit", function(evt) {
-//   if (!userName.value || !userEmail.value) {
-//     evt.preventDefault();
-//     popupForm.classList.add("modal-error");
-//   }
-// });
-
 // Modal Map
 
 linkMap.addEventListener("click", function(evt) {
